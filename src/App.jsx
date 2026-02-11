@@ -145,20 +145,20 @@ const About = () => (
         {/* Text */}
         <div>
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            I spent a decade inside the cage as a professional MMA referee — <span className="text-white font-semibold">500+ bouts, zero controversies</span>. ONE Championship. Rebel FC. Ultimate Beatdown.
+            First apprentice of <span className="text-white font-semibold">Melvin Yeoh</span> — the Godfather of Malaysian MMA. Training under him since 2003. Chief Official at <span className="text-white font-semibold">Ultimate Beatdown</span> since 2011 — the premier fight league where fighters get signed to <span className="text-brand-gold font-semibold">ONE Championship</span>.
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            That career taught me what no bootcamp can: a <span className="text-brand-gold font-semibold">zero-error mindset</span> under pressure. Now I build software with that same precision.
+            <span className="text-white font-semibold">500+ bouts. Zero controversial decisions.</span> Featured on Malaysia TV Channel 8, BFM 89.9 radio, and Philippines national press. I've raised the hands of fighters who went on to become ONE Championship professionals.
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            I understand service businesses because <span className="text-white font-semibold">I am one</span>. Gyms, therapists, artists, bakers — I know the pain points because I live them.
+            That career gave me a <span className="text-brand-gold font-semibold">zero-error mindset</span> under extreme pressure. Now I bring that same precision to building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>.
           </p>
 
           {/* Credentials grid */}
           <div className="grid grid-cols-2 gap-4">
             {[
               { icon: '💻', title: 'Full Stack Dev', desc: 'React Native · Next.js · Supabase' },
-              { icon: '🥊', title: '500+ Bouts', desc: 'ONE Championship · Rebel FC · UB' },
+              { icon: '🥊', title: '500+ Bouts', desc: 'Chief Official, Ultimate Beatdown' },
               { icon: '🥋', title: 'Muay Thai Coach', desc: 'Evolve MMA, Singapore' },
               { icon: '🌏', title: 'SG / MY Based', desc: 'English & Mandarin 中文' },
             ].map((item, i) => (
