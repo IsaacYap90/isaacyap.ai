@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-dark': '#0a0a0a',
-        'brand-gold': '#ffd700',
-        'brand-red': '#e63946',
-        'brand-gray': '#1f2937',
+        'brand-dark': '#0a0a0f',
+        'brand-gold': '#f59e0b',
+        'brand-red': '#dc2626',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
     },
   },
