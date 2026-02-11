@@ -96,7 +96,7 @@ const stats = [
   { value: '$7,600', label: 'Saved for One Gym (Per Year)', color: 'text-white' },
   { value: '500+', label: 'MMA Bouts Officiated', color: 'text-brand-gold' },
   { value: '4', label: 'Apps Shipped', color: 'text-white' },
-  { value: '<4 Weeks', label: 'Average Build Time', color: 'text-brand-red' },
+  { value: '1-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
 ]
 
 const Stats = () => (
@@ -295,16 +295,9 @@ const whyMeCards = [
   {
     emoji: '⚡',
     title: 'We Ship Fast',
-    desc: 'Landing pages in 24-48 hours. Full sites in 1-2 weeks. AI-powered development = agency quality at freelancer speed.',
-    stat: '24-48hr',
+    desc: 'Landing pages in 1-2 weeks. Full apps in 4-6 weeks. AI-powered development = agency quality without the agency timeline.',
+    stat: '1-2 wk',
     statLabel: 'landing pages',
-  },
-  {
-    emoji: '💰',
-    title: 'Skin In The Game',
-    desc: "We offer profit-sharing models — we only win when you win. $0 upfront options available for the right partners.",
-    stat: '$0',
-    statLabel: 'upfront option',
   },
   {
     emoji: '📱',
@@ -319,6 +312,13 @@ const whyMeCards = [
     desc: "I run a gym app, a tattoo booking site, a therapy landing page. I build for small businesses because I understand the hustle.",
     stat: '100%',
     statLabel: 'real-world tested',
+  },
+  {
+    emoji: '🔒',
+    title: 'You Own Everything',
+    desc: "No monthly fees. No vendor lock-in. Your code, your domain, your data. Pay once, own forever.",
+    stat: '$0/mo',
+    statLabel: 'after launch',
   },
 ]
 
