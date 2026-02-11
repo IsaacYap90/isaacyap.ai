@@ -146,6 +146,40 @@ const About = () => (
   </section>
 )
 
+/* ─── AS SEEN IN ─── */
+const AsSeenIn = () => (
+  <section className="py-24 bg-[#060606]">
+    <div className="container mx-auto px-6 max-w-4xl">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">As Seen In.</h2>
+        <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto mb-4" />
+        <p className="text-gray-500 text-base">Featured as the MMA referee in the Malaysian blockbuster film <span className="text-white font-semibold">WIRA</span> (2019)</p>
+      </div>
+
+      <div className="relative group max-w-3xl mx-auto">
+        <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
+        <div className="relative rounded-2xl overflow-hidden">
+          <video
+            src="/images/wira-clip.mp4"
+            controls
+            playsInline
+            preload="metadata"
+            poster=""
+            className="w-full rounded-2xl"
+          />
+          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 bg-black/70 border border-brand-gold/30 rounded-full backdrop-blur-sm pointer-events-none">
+            <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🎬 WIRA (2019)</span>
+          </div>
+        </div>
+      </div>
+
+      <p className="text-center text-gray-600 text-sm mt-6">
+        WIRA — a Malaysian action film featuring real combat sports professionals.
+      </p>
+    </div>
+  </section>
+)
+
 /* ─── PORTFOLIO ─── */
 const portfolioProjects = [
   {
@@ -350,6 +384,7 @@ function App() {
       <Hero />
       <Stats />
       <About />
+      <AsSeenIn />
       <Portfolio />
       <WhyMe />
       <Contact />
