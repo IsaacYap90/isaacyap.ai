@@ -18,6 +18,7 @@ const Nav = () => {
           <a href="#portfolio" className="text-gray-400 hover:text-brand-gold transition-colors">Portfolio</a>
           <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">About</a>
           <a href="#why-me" className="text-gray-400 hover:text-brand-gold transition-colors">Why Me</a>
+        <a href="#pricing" className="text-gray-400 hover:text-brand-gold transition-colors">Pricing</a>
           <a href="#contact" className="px-5 py-2 bg-brand-red hover:bg-red-700 text-white font-semibold rounded-lg transition-all text-xs uppercase tracking-wider">Contact</a>
         </div>
         {/* Mobile hamburger */}
@@ -33,6 +34,7 @@ const Nav = () => {
           <a href="#portfolio" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Portfolio</a>
           <a href="#about" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">About</a>
           <a href="#why-me" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Why Me</a>
+          <a href="#pricing" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Pricing</a>
           <a href="#contact" onClick={() => setMenuOpen(false)} className="px-5 py-3 bg-brand-red hover:bg-red-700 text-white font-bold rounded-lg text-center text-sm uppercase tracking-wider">Contact</a>
         </div>
       )}
@@ -347,6 +349,130 @@ const WhyMe = () => (
   </section>
 )
 
+/* ─── PRICING ─── */
+const Pricing = () => (
+  <section id="pricing" className="py-24 bg-[#060606]">
+    <div className="container mx-auto px-6 max-w-5xl">
+      <div className="text-center mb-16">
+        <h2 className="font-display text-4xl md:text-6xl text-white tracking-wide mb-2">SIMPLE PRICING.</h2>
+        <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto mb-4" />
+        <p className="text-gray-500 text-base max-w-xl mx-auto">Other agencies charge you rent. I sell you the house. You own everything from day one.</p>
+      </div>
+
+      {/* Pricing tiers */}
+      <div className="grid md:grid-cols-3 gap-5 mb-16">
+        {/* Starter */}
+        <div className="group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-8 transition-all duration-300">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-full mb-4">
+            <span className="text-green-400 text-xs font-semibold uppercase tracking-widest">Starter</span>
+          </div>
+          <div className="mb-4">
+            <span className="font-display text-4xl text-white tracking-wide">$500-800</span>
+            <span className="text-gray-600 text-sm ml-2">SGD / one-time</span>
+          </div>
+          <p className="text-gray-400 text-sm mb-6">Perfect for home bakers, freelancers, and therapists.</p>
+          <ul className="space-y-3">
+            {['Landing page', 'Mobile responsive', 'Contact / WhatsApp integration', 'Deployed on your custom domain', 'You own the code'].map((item, i) => (
+              <li key={i} className="flex items-center gap-3 text-gray-300 text-sm">
+                <span className="text-brand-gold text-xs">✓</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Growth */}
+        <div className="group bg-white/[0.02] border border-brand-gold/30 rounded-xl p-8 transition-all duration-300 relative">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-gold text-black text-xs font-bold uppercase tracking-widest rounded-full">Most Popular</div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-gold/10 border border-brand-gold/30 rounded-full mb-4">
+            <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">Growth</span>
+          </div>
+          <div className="mb-4">
+            <span className="font-display text-4xl text-white tracking-wide">$1,500-3,000</span>
+            <span className="text-gray-600 text-sm ml-2">SGD / one-time</span>
+          </div>
+          <p className="text-gray-400 text-sm mb-6">For gyms, clinics, and growing businesses.</p>
+          <ul className="space-y-3">
+            {['Multi-page website', 'Booking / scheduling system', 'Payment integration', 'Admin dashboard', 'SEO optimized', 'You own the code'].map((item, i) => (
+              <li key={i} className="flex items-center gap-3 text-gray-300 text-sm">
+                <span className="text-brand-gold text-xs">✓</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Scale */}
+        <div className="group bg-white/[0.02] border border-white/5 hover:border-brand-red/40 rounded-xl p-8 transition-all duration-300">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-red/10 border border-brand-red/30 rounded-full mb-4">
+            <span className="text-brand-red text-xs font-semibold uppercase tracking-widest">Scale</span>
+          </div>
+          <div className="mb-4">
+            <span className="font-display text-4xl text-white tracking-wide">$3,000+</span>
+            <span className="text-gray-600 text-sm ml-2">SGD / one-time</span>
+          </div>
+          <p className="text-gray-400 text-sm mb-6">Mobile apps, platforms, and custom solutions.</p>
+          <ul className="space-y-3">
+            {['Mobile app (iOS + Android)', 'Full admin dashboard', 'Custom features & integrations', 'Real-time functionality', 'Ongoing support', 'You own the code'].map((item, i) => (
+              <li key={i} className="flex items-center gap-3 text-gray-300 text-sm">
+                <span className="text-brand-gold text-xs">✓</span>{item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Maintenance plan */}
+      <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 md:p-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-gold/10 border border-brand-gold/30 rounded-full mb-4">
+              <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🛡️ Annual Maintenance</span>
+            </div>
+            <h3 className="font-display text-3xl md:text-4xl text-white tracking-wide mb-2">$300-600<span className="text-gray-600 text-lg font-sans">/year</span></h3>
+            <p className="text-gray-500 text-sm mb-2">Less than $1/day. Your site, protected and maintained.</p>
+            <p className="text-brand-gold text-sm font-semibold">⚡ 1-Hour Emergency Response SLA</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              '🔧 Hosting management',
+              '🌐 Domain renewal',
+              '🔒 SSL & security updates',
+              '⚡ 1-hr emergency fix',
+              '📊 Uptime monitoring',
+              '📝 2hrs changes/month',
+              '💬 Priority WhatsApp',
+              '📦 Monthly backups',
+            ].map((item, i) => (
+              <div key={i} className="text-gray-300 text-sm">{item}</div>
+            ))}
+          </div>
+        </div>
+
+        {/* Comparison */}
+        <div className="mt-10 pt-10 border-t border-white/5">
+          <p className="text-center text-gray-600 text-xs uppercase tracking-widest mb-6">3-Year Cost Comparison</p>
+          <div className="grid grid-cols-3 gap-4 text-center max-w-lg mx-auto">
+            <div />
+            <div className="text-gray-500 text-xs uppercase tracking-widest">Subscription Agency</div>
+            <div className="text-brand-gold text-xs uppercase tracking-widest">Isaac</div>
+
+            <div className="text-gray-400 text-sm text-left">3-Year Total</div>
+            <div className="text-gray-400 text-sm line-through">$1,800-10,800</div>
+            <div className="text-white font-bold text-sm">$1,400-2,300</div>
+
+            <div className="text-gray-400 text-sm text-left">Own Code?</div>
+            <div className="text-brand-red text-sm">❌ Never</div>
+            <div className="text-green-400 text-sm">✅ Day 1</div>
+
+            <div className="text-gray-400 text-sm text-left">Site Down Fix</div>
+            <div className="text-gray-500 text-sm">"We'll look into it"</div>
+            <div className="text-brand-gold text-sm font-semibold">⚡ 1 Hour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)
+
 /* ─── CONTACT / FOOTER ─── */
 const Contact = () => {
   const [name, setName] = useState('')
@@ -445,6 +571,7 @@ function App() {
       <About />
       <AsSeenIn />
       <WhyMe />
+      <Pricing />
       <Contact />
     </div>
   )
