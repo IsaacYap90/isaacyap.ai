@@ -5,7 +5,7 @@ const Nav = () => (
   <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
     <div className="container mx-auto px-6 py-4 flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <img src="/images/logo-referee.jpg" alt="Logo" className="w-9 h-9 rounded-full ring-2 ring-brand-gold/60" />
+        <img src="/images/logo-cropped.jpg" alt="Logo" className="w-10 h-10 rounded-full ring-2 ring-brand-gold/60 object-contain bg-black p-0.5" />
         <span className="font-bold text-white tracking-wide text-sm uppercase">Isaac Yap</span>
       </div>
       <div className="hidden md:flex items-center gap-8 text-sm">
