@@ -118,46 +118,57 @@ const Stats = () => (
 /* ─── ABOUT ─── */
 const About = () => (
   <section id="about" className="py-24 bg-[#0a0a0a]">
-    <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center max-w-6xl">
-      {/* Image */}
-      <div className="relative group">
-        <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
-        <div className="relative h-[520px] rounded-2xl overflow-hidden">
-          <img
-            src="/images/about-arms-spread.jpg"
-            alt="Isaac Yap"
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6">
-            <p className="text-brand-gold font-bold text-xs uppercase tracking-[0.2em]">Builder · Fighter · Developer</p>
-          </div>
-        </div>
+    <div className="container mx-auto px-6 max-w-6xl">
+      {/* Section header */}
+      <div className="text-center mb-16">
+        <h2 className="font-display text-4xl md:text-6xl text-white tracking-wide mb-2">FROM THE CAGE TO THE CODE.</h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto" />
       </div>
 
-      {/* Text */}
-      <div>
-        <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">Builder. Fighter. Problem Solver.</h2>
-        <div className="w-16 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mb-8" />
-
-        <p className="text-gray-400 text-base leading-relaxed mb-5">
-          I'm a software developer who understands small business — because <span className="text-white font-semibold">I am one</span>. Before writing code, I spent a decade as a professional MMA referee, officiating <span className="text-white font-semibold">500+ bouts with zero controversies</span>.
-        </p>
-        <p className="text-gray-400 text-base leading-relaxed mb-8">
-          That career taught me what no bootcamp can: a <span className="text-brand-gold font-semibold">zero-error mindset</span>, split-second decision-making, and the discipline to perform under pressure. Now I bring that same precision to building apps for businesses in Singapore and Malaysia.
-        </p>
-
-        <div className="space-y-3">
-          {[
-            'Full Stack: React Native · Next.js · Supabase',
-            'MMA Referee: 500+ Bouts, Zero Controversies',
-            'Muay Thai Coach @ Evolve MMA, Singapore',
-            'Bilingual: English & Mandarin 中文',
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <span className={`w-1.5 h-1.5 rounded-full ${i === 3 ? 'bg-brand-red' : 'bg-brand-gold'}`} />
-              <span className="text-gray-300 text-sm">{item}</span>
+      <div className="grid md:grid-cols-2 gap-16 items-center">
+        {/* Image */}
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
+          <div className="relative h-[520px] rounded-2xl overflow-hidden">
+            <img
+              src="/images/about-arms-spread.jpg"
+              alt="Isaac Yap"
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8">
+              <p className="font-display text-2xl text-white tracking-wide">ISAAC YAP</p>
+              <p className="text-brand-gold text-xs font-semibold uppercase tracking-[0.2em] mt-1">MMA Referee · Developer · Coach</p>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Text */}
+        <div>
+          <p className="text-gray-400 text-lg leading-relaxed mb-6">
+            I spent a decade inside the cage as a professional MMA referee — <span className="text-white font-semibold">500+ bouts, zero controversies</span>. ONE Championship. Rebel FC. Ultimate Beatdown.
+          </p>
+          <p className="text-gray-400 text-lg leading-relaxed mb-6">
+            That career taught me what no bootcamp can: a <span className="text-brand-gold font-semibold">zero-error mindset</span> under pressure. Now I build software with that same precision.
+          </p>
+          <p className="text-gray-400 text-lg leading-relaxed mb-10">
+            I understand service businesses because <span className="text-white font-semibold">I am one</span>. Gyms, therapists, artists, bakers — I know the pain points because I live them.
+          </p>
+
+          {/* Credentials grid */}
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { icon: '💻', title: 'Full Stack Dev', desc: 'React Native · Next.js · Supabase' },
+              { icon: '🥊', title: '500+ Bouts', desc: 'ONE Championship · Rebel FC · UB' },
+              { icon: '🥋', title: 'Muay Thai Coach', desc: 'Evolve MMA, Singapore' },
+              { icon: '🌏', title: 'SG / MY Based', desc: 'English & Mandarin 中文' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-brand-gold/30 transition-colors">
+                <span className="text-2xl mb-2 block">{item.icon}</span>
+                <h4 className="text-white font-bold text-sm mb-1">{item.title}</h4>
+                <p className="text-gray-500 text-xs">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -282,24 +293,32 @@ const Portfolio = () => (
 /* ─── WHY ME ─── */
 const whyMeCards = [
   {
-    emoji: '🎯',
-    title: 'I Understand Small Business',
-    desc: 'Because I am one. I know the pain points, the budget constraints, and what actually moves the needle.',
-  },
-  {
     emoji: '⚡',
-    title: 'I Build Fast',
-    desc: 'AI-powered development means your app ships in weeks, not months. Speed without cutting corners.',
+    title: 'We Ship Fast',
+    desc: 'Landing pages in 24-48 hours. Full sites in 1-2 weeks. AI-powered development = agency quality at freelancer speed.',
+    stat: '24-48hr',
+    statLabel: 'landing pages',
   },
   {
-    emoji: '🔧',
+    emoji: '💰',
+    title: 'Skin In The Game',
+    desc: "We offer profit-sharing models — we only win when you win. $0 upfront options available for the right partners.",
+    stat: '$0',
+    statLabel: 'upfront option',
+  },
+  {
+    emoji: '📱',
     title: 'Full Stack',
-    desc: 'Mobile + web + backend. One developer, one codebase, complete solution. No agency overhead.',
+    desc: 'Websites, mobile apps, admin dashboards, payment systems. One developer, complete solution. No agency markup.',
+    stat: '4',
+    statLabel: 'apps shipped',
   },
   {
-    emoji: '🌏',
-    title: 'Local Market',
-    desc: 'Based in Singapore & Malaysia. I understand the market, the culture, the users. We speak the same language.',
+    emoji: '🎯',
+    title: 'I Am My Customer',
+    desc: "I run a gym app, a tattoo booking site, a therapy landing page. I build for small businesses because I understand the hustle.",
+    stat: '100%',
+    statLabel: 'real-world tested',
   },
 ]
 
@@ -314,7 +333,11 @@ const WhyMe = () => (
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {whyMeCards.map((c, i) => (
           <div key={i} className="group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04]">
-            <div className="text-3xl mb-4">{c.emoji}</div>
+            <div className="text-3xl mb-3">{c.emoji}</div>
+            <div className="mb-3">
+              <span className="font-display text-3xl text-brand-gold tracking-wide">{c.stat}</span>
+              <span className="text-gray-600 text-xs uppercase tracking-widest ml-2">{c.statLabel}</span>
+            </div>
             <h3 className="text-lg font-bold text-white mb-2">{c.title}</h3>
             <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
           </div>
