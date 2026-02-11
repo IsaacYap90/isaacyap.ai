@@ -156,19 +156,36 @@ const AsSeenIn = () => (
         <p className="text-gray-500 text-base">Featured as the MMA referee in the Malaysian blockbuster film <span className="text-white font-semibold">WIRA</span> (2019)</p>
       </div>
 
-      <div className="relative group max-w-3xl mx-auto">
-        <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
-        <div className="relative rounded-2xl overflow-hidden">
-          <video
-            src="/images/wira-clip.mp4"
-            controls
-            playsInline
-            preload="metadata"
-            poster=""
-            className="w-full rounded-2xl"
-          />
-          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 bg-black/70 border border-brand-gold/30 rounded-full backdrop-blur-sm pointer-events-none">
-            <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🎬 WIRA (2019)</span>
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
+          <div className="relative rounded-2xl overflow-hidden">
+            <video
+              src="/images/wira-clip-2.mp4"
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full rounded-2xl aspect-video object-cover"
+            />
+            <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 bg-black/70 border border-brand-gold/30 rounded-full backdrop-blur-sm pointer-events-none">
+              <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🎬 WIRA (2019)</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
+          <div className="relative rounded-2xl overflow-hidden">
+            <video
+              src="/images/wira-clip.mp4"
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full rounded-2xl aspect-video object-cover"
+            />
+            <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 bg-black/70 border border-brand-gold/30 rounded-full backdrop-blur-sm pointer-events-none">
+              <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🎬 WIRA (2019)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -320,11 +337,11 @@ const Contact = () => {
                 </div>
                 <span className="text-gray-400 group-hover:text-green-400 text-sm transition-colors">WhatsApp: +65 8026 8821</span>
               </a>
-              <a href="https://www.instagram.com/isaacyap.90" target="_blank" className="flex items-center gap-3 group">
+              <a href="https://www.instagram.com/isaacyap.ai" target="_blank" className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
                   <span className="text-base">📸</span>
                 </div>
-                <span className="text-gray-400 group-hover:text-brand-gold text-sm transition-colors">@isaacyap.90</span>
+                <span className="text-gray-400 group-hover:text-brand-gold text-sm transition-colors">@isaacyap.ai</span>
               </a>
               <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
