@@ -313,13 +313,13 @@ const whyMeCards = [
     stat: '100%',
     statLabel: 'real-world tested',
   },
-  {
+  /* {
     emoji: '🔒',
     title: 'You Own Everything',
     desc: "No monthly fees. No vendor lock-in. Your code, your domain, your data. Pay once, own forever.",
     stat: '$0/mo',
     statLabel: 'after launch',
-  },
+  }, */
 ]
 
 const WhyMe = () => (
