@@ -18,7 +18,6 @@ const Nav = () => {
           <a href="#portfolio" className="text-gray-400 hover:text-brand-gold transition-colors">Portfolio</a>
           <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">About</a>
           <a href="#why-me" className="text-gray-400 hover:text-brand-gold transition-colors">Why Me</a>
-        <a href="#pricing" className="text-gray-400 hover:text-brand-gold transition-colors">Pricing</a>
           <a href="#contact" className="px-5 py-2 bg-brand-red hover:bg-red-700 text-white font-semibold rounded-lg transition-all text-xs uppercase tracking-wider">Contact</a>
         </div>
         {/* Mobile hamburger */}
@@ -34,7 +33,6 @@ const Nav = () => {
           <a href="#portfolio" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Portfolio</a>
           <a href="#about" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">About</a>
           <a href="#why-me" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Why Me</a>
-          <a href="#pricing" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Pricing</a>
           <a href="#contact" onClick={() => setMenuOpen(false)} className="px-5 py-3 bg-brand-red hover:bg-red-700 text-white font-bold rounded-lg text-center text-sm uppercase tracking-wider">Contact</a>
         </div>
       )}
@@ -571,7 +569,7 @@ function App() {
       <About />
       <AsSeenIn />
       <WhyMe />
-      <Pricing />
+      {/* <Pricing /> — hidden until Isaac is ready to charge */}
       <Contact />
     </div>
   )
