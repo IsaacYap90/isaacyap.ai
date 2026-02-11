@@ -234,34 +234,91 @@ const Projects = () => (
 )
 
 /* ─── CONTACT / FOOTER ─── */
-const Contact = () => (
-  <section id="contact" className="relative py-24 bg-[#060606] border-t border-white/5">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(230,57,70,0.05)_0%,_transparent_60%)]" />
-    <div className="container mx-auto px-6 text-center relative max-w-2xl">
-      <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Ready to Build?</h2>
-      <p className="text-gray-500 text-base mb-10">Custom apps for gyms, studios, and service businesses.</p>
+const Contact = () => {
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
 
-      <div className="flex justify-center gap-8 mb-12">
-        <a href="https://www.instagram.com/isaacyap.90" target="_blank" className="group flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 group-hover:border-brand-gold/50 flex items-center justify-center transition-all">
-            <span className="text-lg">📸</span>
-          </div>
-          <span className="text-gray-500 group-hover:text-brand-gold text-xs transition-colors">Instagram</span>
-        </a>
-        <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="group flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 group-hover:border-brand-gold/50 flex items-center justify-center transition-all">
-            <span className="text-lg">👤</span>
-          </div>
-          <span className="text-gray-500 group-hover:text-brand-gold text-xs transition-colors">Facebook</span>
-        </a>
-      </div>
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const text = `Hi Isaac! I'm ${name}. ${message}`
+    window.open(`https://wa.me/6580268821?text=${encodeURIComponent(text)}`, '_blank')
+  }
 
-      <div className="pt-8 border-t border-white/5">
-        <p className="text-gray-700 text-xs">© 2026 Isaac Yap. All rights reserved.</p>
+  return (
+    <section id="contact" className="relative py-24 bg-[#060606] border-t border-white/5">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(230,57,70,0.05)_0%,_transparent_60%)]" />
+      <div className="container mx-auto px-6 relative max-w-4xl">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left — Info */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Let's Talk.</h2>
+            <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mb-6" />
+            <p className="text-gray-400 text-base leading-relaxed mb-8">
+              Need a custom app for your gym or business? Want to discuss refereeing? Drop me a message — I'll get back to you fast.
+            </p>
+
+            <div className="flex flex-col gap-4 mb-8">
+              <a href="https://wa.me/6580268821" target="_blank" className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                  <span className="text-base">💬</span>
+                </div>
+                <span className="text-gray-400 group-hover:text-green-400 text-sm transition-colors">WhatsApp: +65 8026 8821</span>
+              </a>
+              <a href="https://www.instagram.com/isaacyap.90" target="_blank" className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                  <span className="text-base">📸</span>
+                </div>
+                <span className="text-gray-400 group-hover:text-brand-gold text-sm transition-colors">@isaacyap.90</span>
+              </a>
+              <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                  <span className="text-base">👤</span>
+                </div>
+                <span className="text-gray-400 group-hover:text-brand-gold text-sm transition-colors">Isaac Yap - Professional MMA Referee</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right — Form */}
+          <form onSubmit={handleSubmit} className="bg-white/[0.02] border border-white/5 rounded-xl p-7 space-y-5">
+            <div>
+              <label className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-2 block">Your Name</label>
+              <input
+                type="text"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="John Doe"
+                className="w-full bg-white/5 border border-white/10 focus:border-brand-gold/50 rounded-lg px-4 py-3 text-white text-sm placeholder:text-gray-600 outline-none transition-colors"
+              />
+            </div>
+            <div>
+              <label className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-2 block">Your Message</label>
+              <textarea
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="I'm interested in building a custom app for my gym..."
+                rows={4}
+                className="w-full bg-white/5 border border-white/10 focus:border-brand-gold/50 rounded-lg px-4 py-3 text-white text-sm placeholder:text-gray-600 outline-none transition-colors resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3.5 bg-green-600 hover:bg-green-500 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2"
+            >
+              💬 Send via WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <div className="pt-12 mt-12 border-t border-white/5 text-center">
+          <p className="text-gray-700 text-xs">© 2026 Isaac Yap. All rights reserved.</p>
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 /* ─── APP ─── */
 function App() {
