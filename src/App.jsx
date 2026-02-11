@@ -4,10 +4,13 @@ import { useState } from 'react'
 const Nav = () => (
   <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
     <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <img src="/images/logo-cropped.jpg" alt="Logo" className="w-10 h-10 rounded-full ring-2 ring-brand-gold/60 object-contain bg-black p-0.5" />
-        <span className="font-bold text-white tracking-wide text-sm uppercase">Isaac Yap</span>
-      </div>
+      <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) }} className="flex items-center gap-3 group">
+        <img src="/images/logo-cropped.jpg" alt="Logo" className="w-11 h-11 rounded-full ring-2 ring-brand-gold/60 object-contain bg-black p-0.5" />
+        <div className="leading-tight">
+          <span className="font-black text-white text-base tracking-wide block group-hover:text-brand-gold transition-colors">ISAAC YAP</span>
+          <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Professional MMA Referee</span>
+        </div>
+      </a>
       <div className="hidden md:flex items-center gap-8 text-sm">
         <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">About</a>
         <a href="#gallery" className="text-gray-400 hover:text-brand-gold transition-colors">Gallery</a>
