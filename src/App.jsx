@@ -67,7 +67,7 @@ const Hero = () => (
         </h1>
 
         <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-          I replaced a gym's <span className="text-white font-medium">$7,600/yr software</span> with a custom app. I build <span className="text-white font-medium">booking systems, management platforms, and websites</span> for small businesses in SG & MY.
+          I build <span className="text-white font-medium">booking systems, management platforms, and websites</span> for small businesses in SG & MY. From <span className="text-white font-medium">gym apps</span> to <span className="text-white font-medium">tattoo booking sites</span> — if it helps you run your business, I'll build it.
         </p>
 
         <div className="flex flex-wrap gap-4">
@@ -93,9 +93,9 @@ const Hero = () => (
 
 /* ─── STATS ─── */
 const stats = [
-  { value: '$7,600', label: 'Saved for One Gym (Per Year)', color: 'text-white' },
+  { value: '3', label: 'Businesses Served', color: 'text-white' },
   { value: '500+', label: 'MMA Bouts Officiated', color: 'text-brand-gold' },
-  { value: '4', label: 'Apps Shipped', color: 'text-white' },
+  { value: '4', label: 'Apps Built', color: 'text-white' },
   { value: '1-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
 ]
 
@@ -231,10 +231,10 @@ const portfolioProjects = [
   {
     emoji: '🥊',
     title: 'JMT Super App',
-    desc: 'Complete gym management ecosystem — class booking, PT sessions, member portal, coach dashboard, payments. Replaced a $7,600/yr SaaS subscription.',
+    desc: 'Complete gym management ecosystem — class booking, PT sessions, member portal, coach dashboard, payments.',
     tech: ['React Native', 'Expo', 'Supabase'],
-    status: 'Live',
-    statusColor: 'text-green-400',
+    status: 'In Development',
+    statusColor: 'text-yellow-400',
   },
   {
     emoji: '🏆',
