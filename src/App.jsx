@@ -1,189 +1,278 @@
 import { useState } from 'react'
 
-const Hero = () => (
-  <section className="min-h-screen flex items-center justify-center bg-brand-dark relative overflow-hidden">
-    {/* Hero Background Image */}
-    <div className="absolute inset-0">
-      <img 
-        src="/images/hero-rebel-fc.jpg" 
-        alt="Isaac Yap in the cage at Rebel Fighting Championship" 
-        className="w-full h-full object-cover object-center opacity-40"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+/* ─── NAV ─── */
+const Nav = () => (
+  <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
+    <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="flex items-center gap-3">
+        <img src="/images/logo-referee.jpg" alt="Logo" className="w-9 h-9 rounded-full ring-2 ring-brand-gold/60" />
+        <span className="font-bold text-white tracking-wide text-sm uppercase">Isaac Yap</span>
+      </div>
+      <div className="hidden md:flex items-center gap-8 text-sm">
+        <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">About</a>
+        <a href="#gallery" className="text-gray-400 hover:text-brand-gold transition-colors">Gallery</a>
+        <a href="#projects" className="text-gray-400 hover:text-brand-gold transition-colors">Projects</a>
+        <a href="#contact" className="px-5 py-2 bg-brand-red hover:bg-red-700 text-white font-semibold rounded-lg transition-all text-xs uppercase tracking-wider">Contact</a>
+      </div>
     </div>
-    
-    <div className="container mx-auto px-6 text-center z-10">
-      <img src="/images/logo-referee.jpg" alt="Isaac Yap Professional Referee Logo" className="w-24 h-24 mx-auto mb-6 rounded-full border-2 border-brand-gold" />
-      <h2 className="text-brand-gold font-bold tracking-widest text-sm mb-4 uppercase">Professional MMA Referee &amp; Software Engineer</h2>
-      <h1 className="text-6xl md:text-8xl font-black text-white mb-6 leading-tight">
-        PRECISION<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-gold">IN CHAOS</span>
-      </h1>
-      <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10">
-        500+ Bouts. Zero Controversies.<br/>The Standard for Southeast Asian MMA.
-        <br/><span className="text-white font-medium mt-2 block">Now Building Unfair Advantages in Software.</span>
-      </p>
-      <div className="flex flex-col md:flex-row gap-4 justify-center">
-        <a href="#contact" className="px-8 py-4 bg-brand-red hover:bg-red-700 text-white font-bold rounded-lg transition-all transform hover:scale-105">
-          WORK WITH ME
-        </a>
-        <a href="#gallery" className="px-8 py-4 border border-gray-600 hover:border-brand-gold hover:text-brand-gold text-gray-300 font-bold rounded-lg transition-all">
-          VIEW GALLERY
-        </a>
+  </nav>
+)
+
+/* ─── HERO ─── */
+const Hero = () => (
+  <section className="relative min-h-screen flex items-end pb-24 md:items-center md:pb-0 overflow-hidden">
+    {/* BG */}
+    <div className="absolute inset-0">
+      <img
+        src="/images/hero-rebel-fc.jpg"
+        alt="Isaac Yap — Rebel Fighting Championship"
+        className="w-full h-full object-cover object-[center_20%]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/40" />
+    </div>
+
+    <div className="container mx-auto px-6 z-10 max-w-5xl">
+      <div className="max-w-2xl">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-gold/10 border border-brand-gold/30 rounded-full mb-6">
+          <span className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-pulse" />
+          <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">Professional MMA Referee</span>
+        </div>
+
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.9] mb-6">
+          <span className="text-white">PRECISION</span><br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-yellow-500 to-brand-gold">IN CHAOS.</span>
+        </h1>
+
+        <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
+          500+ bouts officiated. Zero controversies.<br />
+          <span className="text-white font-medium">The standard for Southeast Asian MMA.</span>
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <a href="#contact" className="group px-7 py-3.5 bg-brand-red hover:bg-red-600 text-white font-bold rounded-lg transition-all flex items-center gap-2">
+            Work With Me
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+          <a href="#gallery" className="px-7 py-3.5 border border-white/15 hover:border-brand-gold text-white hover:text-brand-gold font-semibold rounded-lg transition-all backdrop-blur-sm">
+            View Gallery
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Scroll indicator */}
+    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+      <div className="w-5 h-8 border-2 border-white/20 rounded-full flex justify-center pt-1.5">
+        <div className="w-1 h-2 bg-brand-gold rounded-full animate-bounce" />
       </div>
     </div>
   </section>
 )
+
+/* ─── STATS ─── */
+const stats = [
+  { value: '500+', label: 'Professional Bouts', color: 'text-white' },
+  { value: '0', label: 'Controversial Decisions', color: 'text-brand-gold' },
+  { value: '15+', label: 'Years in Combat Sports', color: 'text-white' },
+  { value: '3', label: 'MMA · Boxing · Kickboxing', color: 'text-brand-red' },
+]
 
 const Stats = () => (
-  <section className="py-20 bg-black border-y border-gray-800">
-    <div className="container mx-auto px-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-        <div className="p-6">
-          <h3 className="text-5xl font-black text-white mb-2">500+</h3>
-          <p className="text-gray-400 uppercase tracking-widest text-sm">Professional Bouts</p>
+  <section className="relative py-16 bg-[#0a0a0a] border-y border-white/5">
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.03)_0%,_transparent_70%)]" />
+    <div className="container mx-auto px-6 relative">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((s, i) => (
+          <div key={i} className="text-center">
+            <h3 className={`text-4xl md:text-5xl font-black ${s.color} mb-1`}>{s.value}</h3>
+            <p className="text-gray-500 text-xs uppercase tracking-widest font-medium">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)
+
+/* ─── ABOUT ─── */
+const About = () => (
+  <section id="about" className="py-24 bg-[#0a0a0a]">
+    <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center max-w-6xl">
+      {/* Image */}
+      <div className="relative group">
+        <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
+        <div className="relative h-[520px] rounded-2xl overflow-hidden">
+          <img
+            src="/images/about-arms-spread.jpg"
+            alt="Isaac Yap — Malaysian Invasion MMA"
+            className="w-full h-full object-cover object-top"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6">
+            <p className="text-brand-gold font-bold text-xs uppercase tracking-[0.2em]">Malaysian Invasion MMA</p>
+          </div>
         </div>
-        <div className="p-6 md:border-l border-gray-800">
-          <h3 className="text-5xl font-black text-brand-gold mb-2">0</h3>
-          <p className="text-gray-400 uppercase tracking-widest text-sm">Controversial Decisions</p>
-        </div>
-        <div className="p-6 md:border-l border-gray-800">
-          <h3 className="text-5xl font-black text-white mb-2">15+</h3>
-          <p className="text-gray-400 uppercase tracking-widest text-sm">Years in Combat Sports</p>
-        </div>
-        <div className="p-6 md:border-l border-gray-800">
-          <h3 className="text-5xl font-black text-brand-red mb-2">3</h3>
-          <p className="text-gray-400 uppercase tracking-widest text-sm">Disciplines (MMA · Boxing · Kickboxing)</p>
+      </div>
+
+      {/* Text */}
+      <div>
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">The Man in the Middle.</h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mb-8" />
+
+        <p className="text-gray-400 text-base leading-relaxed mb-5">
+          Since 2003, I've been immersed in combat sports — first as an apprentice under <span className="text-white font-semibold">Melvin Yeoh</span> (the Godfather of Malaysian MMA), then as Chief Official for <span className="text-white font-semibold">Ultimate Beatdown</span>.
+        </p>
+        <p className="text-gray-400 text-base leading-relaxed mb-8">
+          In the cage, a split-second mistake can end a career. My job is absolute precision, safety, and fairness. I bring that same <span className="text-brand-gold font-semibold">zero-error mindset</span> to everything I build.
+        </p>
+
+        <div className="space-y-3">
+          {[
+            'Chief Official — Ultimate Beatdown (Since 2011)',
+            'Rebel FC · Malaysian Invasion · ONE Silat',
+            'Featured: Malaysian TV Ch8 · BFM 89.9',
+            'Bilingual: English & Mandarin 中文',
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <span className={`w-1.5 h-1.5 rounded-full ${i === 3 ? 'bg-brand-red' : 'bg-brand-gold'}`} />
+              <span className="text-gray-300 text-sm">{item}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 )
 
-const About = () => (
-  <section className="py-24 bg-brand-dark relative">
-    <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 className="text-4xl font-bold mb-6">The Man in the Middle.</h2>
-        <p className="text-gray-400 mb-6 text-lg leading-relaxed">
-          Since 2003, I've been immersed in combat sports—first as an apprentice under <span className="text-white font-semibold">Melvin Yeoh</span> (the Godfather of Malaysian MMA), then as Chief Official for <span className="text-white font-semibold">Ultimate Beatdown</span>.
-        </p>
-        <p className="text-gray-400 mb-6 text-lg leading-relaxed">
-          In the cage, a split-second mistake can ruin a fighter's career. My job is absolute precision, safety, and fairness. I bring that same <span className="text-brand-gold font-semibold">zero-error mindset</span> to everything I build.
-        </p>
-        <ul className="space-y-4 mb-8">
-          <li className="flex items-center text-white">
-            <span className="w-2 h-2 bg-brand-gold rounded-full mr-3"></span>
-            Chief Official — Ultimate Beatdown (Since 2011)
-          </li>
-          <li className="flex items-center text-white">
-            <span className="w-2 h-2 bg-brand-gold rounded-full mr-3"></span>
-            Rebel Fighting Championship · Malaysian Invasion · ONE Silat
-          </li>
-          <li className="flex items-center text-white">
-            <span className="w-2 h-2 bg-brand-gold rounded-full mr-3"></span>
-            Featured: Malaysian TV Channel 8 · BFM 89.9
-          </li>
-          <li className="flex items-center text-white">
-            <span className="w-2 h-2 bg-brand-red rounded-full mr-3"></span>
-            Bilingual: English &amp; Mandarin 中文
-          </li>
-        </ul>
-      </div>
-      <div className="relative h-[500px] rounded-2xl overflow-hidden border border-gray-800">
-        <img 
-          src="/images/about-arms-spread.jpg" 
-          alt="Isaac Yap commanding the cage at Malaysian Invasion" 
-          className="w-full h-full object-cover object-top"
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-          <p className="text-brand-gold font-bold text-sm uppercase tracking-widest">Malaysian Invasion MMA</p>
-        </div>
-      </div>
-    </div>
-  </section>
-)
+/* ─── GALLERY ─── */
+const galleryImages = [
+  { src: '/images/action-ground.jpg', alt: 'Ground action — ONE Championship', span: 'md:col-span-2' },
+  { src: '/images/victory-warrior-fc.jpg', alt: 'Victory raise — Warrior FC', span: '' },
+  { src: '/images/victory-cage.jpg', alt: 'Victory call — Regional event', span: '' },
+  { src: '/images/silat-referee.jpg', alt: 'ONE Silat Championship', span: 'md:col-span-2' },
+  { src: '/images/victory-raise.jpg', alt: 'Singapore event', span: '' },
+  { src: '/images/victory-belt.jpg', alt: 'Championship belt ceremony', span: 'md:col-span-2' },
+]
 
 const Gallery = () => (
-  <section id="gallery" className="py-24 bg-black">
-    <div className="container mx-auto px-6">
-      <h2 className="text-4xl font-bold text-center mb-12">In The Ring.</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div className="relative overflow-hidden rounded-lg aspect-video">
-          <img src="/images/action-ground.jpg" alt="Isaac refereeing ground action" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div className="relative overflow-hidden rounded-lg aspect-video">
-          <img src="/images/victory-warrior-fc.jpg" alt="Raising the winner's hand at Warrior FC" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div className="relative overflow-hidden rounded-lg aspect-video">
-          <img src="/images/victory-cage.jpg" alt="Victory announcement in the cage" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div className="relative overflow-hidden rounded-lg aspect-video">
-          <img src="/images/victory-raise.jpg" alt="Raising the winner's hand" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div className="relative overflow-hidden rounded-lg aspect-video">
-          <img src="/images/silat-referee.jpg" alt="ONE Silat Championship referee" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-        </div>
-        <div className="relative overflow-hidden rounded-lg aspect-video">
-          <img src="/images/victory-belt.jpg" alt="Championship belt ceremony" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-        </div>
+  <section id="gallery" className="py-24 bg-[#060606]">
+    <div className="container mx-auto px-6 max-w-6xl">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">In the Ring.</h2>
+        <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto" />
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {galleryImages.map((img, i) => (
+          <div key={i} className={`relative overflow-hidden rounded-xl aspect-[4/3] group ${img.span}`}>
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <p className="absolute bottom-3 left-3 text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">{img.alt}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 )
 
-const Builder = () => (
-  <section className="py-24 bg-brand-dark">
-    <div className="container mx-auto px-6 text-center">
-      <h2 className="text-4xl font-bold mb-4">From the Ring to the Code.</h2>
-      <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
-        I spent a decade ensuring fair fights. Now I build unfair advantages for businesses.
-      </p>
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-brand-gold transition-colors">
-          <div className="text-3xl mb-4">🥊</div>
-          <h3 className="text-xl font-bold text-white mb-3">JMT Super App</h3>
-          <p className="text-gray-400 text-sm">Full gym management ecosystem — admin, coaches, members. Built with React Native + Supabase.</p>
-          <span className="inline-block mt-4 text-brand-gold text-xs font-bold uppercase tracking-widest">Coming Soon</span>
-        </div>
-        <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-brand-gold transition-colors">
-          <div className="text-3xl mb-4">💆</div>
-          <h3 className="text-xl font-bold text-white mb-3">The Stretch Lad</h3>
-          <p className="text-gray-400 text-sm">Scaling a stretch therapist from 30 to 100 clients/month with a high-conversion landing page.</p>
-          <span className="inline-block mt-4 text-brand-gold text-xs font-bold uppercase tracking-widest">In Progress</span>
-        </div>
-        <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-brand-gold transition-colors">
-          <div className="text-3xl mb-4">🎨</div>
-          <h3 className="text-xl font-bold text-white mb-3">Pocolane Studio</h3>
-          <p className="text-gray-400 text-sm">Art &amp; physical products e-commerce. Firebase-hosted. "Big Heart Energy."</p>
-          <a href="https://pocolane.studio" target="_blank" className="inline-block mt-4 text-brand-gold text-xs font-bold uppercase tracking-widest hover:underline">Visit →</a>
-        </div>
+/* ─── PROJECTS ─── */
+const projects = [
+  {
+    emoji: '🥊',
+    title: 'JMT Super App',
+    desc: 'Full gym management ecosystem — admin, coaches, members. React Native + Supabase.',
+    status: 'Coming Soon',
+    statusColor: 'text-brand-gold',
+  },
+  {
+    emoji: '💆',
+    title: 'The Stretch Lad',
+    desc: 'Scaling a stretch therapist from 30 → 100 clients/month with a high-conversion landing page.',
+    status: 'In Progress',
+    statusColor: 'text-brand-red',
+  },
+  {
+    emoji: '🎨',
+    title: 'Pocolane Studio',
+    desc: 'Art & physical products e-commerce. Firebase-hosted. "Big Heart Energy."',
+    status: 'Live',
+    statusColor: 'text-green-400',
+    link: 'https://pocolane.studio',
+  },
+]
+
+const Projects = () => (
+  <section id="projects" className="py-24 bg-[#0a0a0a]">
+    <div className="container mx-auto px-6 max-w-5xl">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">From the Ring to the Code.</h2>
+        <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto mb-4" />
+        <p className="text-gray-500 text-base max-w-lg mx-auto">I spent a decade ensuring fair fights. Now I build unfair advantages for businesses.</p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-5">
+        {projects.map((p, i) => (
+          <div key={i} className="group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04]">
+            <div className="text-3xl mb-4">{p.emoji}</div>
+            <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.desc}</p>
+            {p.link ? (
+              <a href={p.link} target="_blank" className={`${p.statusColor} text-xs font-bold uppercase tracking-widest hover:underline`}>
+                Visit →
+              </a>
+            ) : (
+              <span className={`${p.statusColor} text-xs font-bold uppercase tracking-widest`}>{p.status}</span>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   </section>
 )
 
+/* ─── CONTACT / FOOTER ─── */
 const Contact = () => (
-  <section id="contact" className="py-24 bg-black border-t border-gray-900">
-    <div className="container mx-auto px-6 text-center">
-      <h2 className="text-4xl font-bold text-white mb-4">Ready to Build?</h2>
-      <p className="text-gray-400 text-lg mb-8">Custom apps for gyms, studios, and service businesses.</p>
-      <div className="flex justify-center gap-6 mb-12">
-        <a href="https://www.instagram.com/isaacyap.90" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">Instagram</a>
-        <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">Facebook</a>
+  <section id="contact" className="relative py-24 bg-[#060606] border-t border-white/5">
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(230,57,70,0.05)_0%,_transparent_60%)]" />
+    <div className="container mx-auto px-6 text-center relative max-w-2xl">
+      <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Ready to Build?</h2>
+      <p className="text-gray-500 text-base mb-10">Custom apps for gyms, studios, and service businesses.</p>
+
+      <div className="flex justify-center gap-8 mb-12">
+        <a href="https://www.instagram.com/isaacyap.90" target="_blank" className="group flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 group-hover:border-brand-gold/50 flex items-center justify-center transition-all">
+            <span className="text-lg">📸</span>
+          </div>
+          <span className="text-gray-500 group-hover:text-brand-gold text-xs transition-colors">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="group flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 group-hover:border-brand-gold/50 flex items-center justify-center transition-all">
+            <span className="text-lg">👤</span>
+          </div>
+          <span className="text-gray-500 group-hover:text-brand-gold text-xs transition-colors">Facebook</span>
+        </a>
       </div>
-      <p className="text-gray-600 text-sm">© 2026 Isaac Yap. All rights reserved.</p>
+
+      <div className="pt-8 border-t border-white/5">
+        <p className="text-gray-700 text-xs">© 2026 Isaac Yap. All rights reserved.</p>
+      </div>
     </div>
   </section>
 )
 
+/* ─── APP ─── */
 function App() {
   return (
-    <div className="bg-brand-dark min-h-screen text-white font-sans selection:bg-brand-red selection:text-white">
+    <div className="bg-[#0a0a0a] min-h-screen text-white font-sans selection:bg-brand-red/80 selection:text-white">
+      <Nav />
       <Hero />
       <Stats />
       <About />
       <Gallery />
-      <Builder />
+      <Projects />
       <Contact />
     </div>
   )
