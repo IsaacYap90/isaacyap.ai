@@ -13,7 +13,9 @@ export default {
         'brand-gray': '#1f2937',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Space Grotesk', 'sans-serif'],
+        display: ['Bebas Neue', 'sans-serif'],
+        logo: ['Archivo Black', 'sans-serif'],
       },
     },
   },

@@ -1,25 +1,44 @@
 import { useState } from 'react'
 
 /* ─── NAV ─── */
-const Nav = () => (
-  <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
-    <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) }} className="flex items-center gap-3 group">
-        <img src="/images/logo-cropped.jpg" alt="Logo" className="w-11 h-11 rounded-full ring-2 ring-brand-gold/60 object-contain bg-black p-0.5" />
-        <div className="leading-tight">
-          <span className="font-black text-white text-2xl md:text-3xl tracking-wide block group-hover:text-brand-gold transition-colors">ISAAC YAP</span>
-          <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Software Developer</span>
+const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  return (
+    <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) }} className="flex items-center gap-3 group">
+          <img src="/images/logo-cropped.jpg" alt="Logo" className="w-11 h-11 rounded-full ring-2 ring-brand-gold/60 object-contain bg-black p-0.5" />
+          <div className="leading-tight">
+            <span className="font-logo text-white text-2xl md:text-3xl tracking-wide block group-hover:text-brand-gold transition-colors">ISAAC YAP</span>
+            <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Software Developer</span>
+          </div>
+        </a>
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8 text-sm">
+          <a href="#portfolio" className="text-gray-400 hover:text-brand-gold transition-colors">Portfolio</a>
+          <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">About</a>
+          <a href="#why-me" className="text-gray-400 hover:text-brand-gold transition-colors">Why Me</a>
+          <a href="#contact" className="px-5 py-2 bg-brand-red hover:bg-red-700 text-white font-semibold rounded-lg transition-all text-xs uppercase tracking-wider">Contact</a>
         </div>
-      </a>
-      <div className="hidden md:flex items-center gap-8 text-sm">
-        <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">About</a>
-        <a href="#portfolio" className="text-gray-400 hover:text-brand-gold transition-colors">Portfolio</a>
-        <a href="#why-me" className="text-gray-400 hover:text-brand-gold transition-colors">Why Me</a>
-        <a href="#contact" className="px-5 py-2 bg-brand-red hover:bg-red-700 text-white font-semibold rounded-lg transition-all text-xs uppercase tracking-wider">Contact</a>
+        {/* Mobile hamburger */}
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+          <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        </button>
       </div>
-    </div>
-  </nav>
-)
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#0a0a0a]/95 backdrop-blur-lg border-t border-white/5 px-6 py-6 flex flex-col gap-5">
+          <a href="#portfolio" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Portfolio</a>
+          <a href="#about" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">About</a>
+          <a href="#why-me" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Why Me</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)} className="px-5 py-3 bg-brand-red hover:bg-red-700 text-white font-bold rounded-lg text-center text-sm uppercase tracking-wider">Contact</a>
+        </div>
+      )}
+    </nav>
+  )
+}
 
 /* ─── HERO ─── */
 const Hero = () => (
@@ -42,7 +61,7 @@ const Hero = () => (
           <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">Software Developer · SG/MY</span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.9] mb-6">
+        <h1 className="font-display text-6xl sm:text-7xl md:text-9xl leading-[0.9] tracking-wide mb-6">
           <span className="text-white">PRECISION</span><br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-yellow-500 to-brand-gold">IN CHAOS.</span>
         </h1>
@@ -75,10 +94,10 @@ const Hero = () => (
 
 /* ─── STATS ─── */
 const stats = [
+  { value: '$7,600', label: 'Saved for One Gym (Per Year)', color: 'text-white' },
+  { value: '500+', label: 'MMA Bouts Officiated', color: 'text-brand-gold' },
   { value: '4', label: 'Apps Shipped', color: 'text-white' },
-  { value: '2', label: 'Industries Served', color: 'text-brand-gold' },
-  { value: '∞', label: 'Problems Solved', color: 'text-white' },
-  { value: '1', label: 'Mission: Help SMEs Win', color: 'text-brand-red' },
+  { value: '<4 Weeks', label: 'Average Build Time', color: 'text-brand-red' },
 ]
 
 const Stats = () => (
@@ -88,7 +107,7 @@ const Stats = () => (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map((s, i) => (
           <div key={i} className="text-center">
-            <h3 className={`text-4xl md:text-5xl font-black ${s.color} mb-1`}>{s.value}</h3>
+            <h3 className={`font-display text-5xl md:text-6xl tracking-wide ${s.color} mb-1`}>{s.value}</h3>
             <p className="text-gray-500 text-xs uppercase tracking-widest font-medium">{s.label}</p>
           </div>
         ))}
@@ -118,7 +137,7 @@ const About = () => (
 
       {/* Text */}
       <div>
-        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">Builder. Fighter. Problem Solver.</h2>
+        <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">Builder. Fighter. Problem Solver.</h2>
         <div className="w-16 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mb-8" />
 
         <p className="text-gray-400 text-base leading-relaxed mb-5">
@@ -151,7 +170,7 @@ const AsSeenIn = () => (
   <section className="py-24 bg-[#060606]">
     <div className="container mx-auto px-6 max-w-4xl">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">As Seen In.</h2>
+        <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">As Seen In.</h2>
         <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto mb-4" />
         <p className="text-gray-500 text-base">Featured as the MMA referee in the Malaysian blockbuster film <span className="text-white font-semibold">WIRA</span> (2019)</p>
       </div>
@@ -237,7 +256,7 @@ const Portfolio = () => (
   <section id="portfolio" className="py-24 bg-[#060606]">
     <div className="container mx-auto px-6 max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">What I Build.</h2>
+        <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">What I Build.</h2>
         <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto mb-4" />
         <p className="text-gray-500 text-base max-w-lg mx-auto">Real apps for real businesses. Not templates — custom-built solutions.</p>
       </div>
@@ -289,7 +308,7 @@ const WhyMe = () => (
   <section id="why-me" className="py-24 bg-[#0a0a0a]">
     <div className="container mx-auto px-6 max-w-5xl">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-black text-white mb-2">Why Work With Me.</h2>
+        <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">Why Work With Me.</h2>
         <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto" />
       </div>
 
@@ -324,7 +343,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left — Info */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Let's Build Something.</h2>
+            <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-3">Let's Build Something.</h2>
             <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mb-6" />
             <p className="text-gray-400 text-base leading-relaxed mb-8">
               Need an app for your business? A booking system? A management platform? Let's talk about what you need.
@@ -400,9 +419,9 @@ function App() {
       <Nav />
       <Hero />
       <Stats />
+      <Portfolio />
       <About />
       <AsSeenIn />
-      <Portfolio />
       <WhyMe />
       <Contact />
     </div>
