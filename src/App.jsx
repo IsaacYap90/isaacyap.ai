@@ -372,19 +372,19 @@ const Contact = () => {
             </p>
 
             <div className="flex flex-col gap-4 mb-8">
-              <a href="https://wa.me/6580268821" target="_blank" className="flex items-center gap-3 group">
+              <a href="https://wa.me/6580268821" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
                   <span className="text-base">💬</span>
                 </div>
                 <span className="text-gray-400 group-hover:text-green-400 text-sm transition-colors">WhatsApp: +65 8026 8821</span>
               </a>
-              <a href="https://www.instagram.com/isaacyap.ai" target="_blank" className="flex items-center gap-3 group">
+              <a href="https://www.instagram.com/isaacyap.ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
                   <span className="text-base">📸</span>
                 </div>
                 <span className="text-gray-400 group-hover:text-brand-gold text-sm transition-colors">@isaacyap.ai</span>
               </a>
-              <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="flex items-center gap-3 group">
+              <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
                   <span className="text-base">👤</span>
                 </div>
