@@ -42,13 +42,13 @@ const Nav = () => {
 
 /* ─── HERO ─── */
 const Hero = () => (
-  <section className="relative min-h-screen flex items-end pb-16 overflow-hidden">
+  <section className="relative min-h-[110vh] md:min-h-screen flex items-end pb-10 overflow-hidden">
     {/* BG */}
     <div className="absolute inset-0">
       <img
         src="/images/hero-rebel-fc.jpg"
         alt="Isaac Yap"
-        className="w-full h-full object-cover object-[center_15%]"
+        className="w-full h-full object-cover object-top"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/70 via-[#0a0a0a]/30 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
@@ -67,8 +67,7 @@ const Hero = () => (
         </h1>
 
         <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-          I build apps that solve real problems for small businesses.<br />
-          <span className="text-white font-medium">Mobile apps. Web platforms. From concept to launch.</span>
+          I replaced a gym's <span className="text-white font-medium">$7,600/yr software</span> with a custom app. I build <span className="text-white font-medium">booking systems, management platforms, and websites</span> for small businesses in SG & MY.
         </p>
 
         <div className="flex flex-wrap gap-4">
