@@ -23,16 +23,16 @@ const Nav = () => (
 
 /* ─── HERO ─── */
 const Hero = () => (
-  <section className="relative min-h-screen flex items-end pb-24 md:items-center md:pb-0 overflow-hidden">
+  <section className="relative min-h-screen flex items-end pb-16 overflow-hidden">
     {/* BG */}
     <div className="absolute inset-0">
       <img
         src="/images/hero-rebel-fc.jpg"
         alt="Isaac Yap"
-        className="w-full h-full object-cover object-[center_20%]"
+        className="w-full h-full object-cover object-[center_15%]"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/70 via-[#0a0a0a]/30 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
     </div>
 
     <div className="container mx-auto px-6 z-10 max-w-5xl">
