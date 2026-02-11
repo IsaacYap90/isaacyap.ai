@@ -168,7 +168,7 @@ const Contact = () => (
       <h2 className="text-4xl font-bold text-white mb-4">Ready to Build?</h2>
       <p className="text-gray-400 text-lg mb-8">Custom apps for gyms, studios, and service businesses.</p>
       <div className="flex justify-center gap-6 mb-12">
-        <a href="https://www.instagram.com/professional_mma_referee/" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">Instagram</a>
+        <a href="https://www.instagram.com/isaacyap.90" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">Instagram</a>
         <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">Facebook</a>
       </div>
       <p className="text-gray-600 text-sm">© 2026 Isaac Yap. All rights reserved.</p>
