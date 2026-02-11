@@ -170,7 +170,6 @@ const Contact = () => (
       <div className="flex justify-center gap-6 mb-12">
         <a href="https://www.instagram.com/professional_mma_referee/" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">Instagram</a>
         <a href="https://www.facebook.com/IsaacProMMARef/" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">Facebook</a>
-        <a href="https://www.tiktok.com/@isaacyap" target="_blank" className="text-gray-400 hover:text-brand-gold transition-colors text-lg">TikTok</a>
       </div>
       <p className="text-gray-600 text-sm">© 2026 Isaac Yap. All rights reserved.</p>
     </div>
