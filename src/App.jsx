@@ -301,33 +301,33 @@ const Portfolio = () => (
 /* ─── WHY ME ─── */
 const whyMeCards = [
   {
-    emoji: '⚡',
-    title: 'We Ship Fast',
-    desc: 'Landing pages in 1-2 weeks. Full apps in 4-6 weeks. AI-powered development = agency quality without the agency timeline.',
-    stat: '1-2 wk',
-    statLabel: 'landing pages',
+    emoji: '🛡️',
+    title: 'Battle-Tested Discipline',
+    desc: "500+ MMA bouts taught me precision under pressure and zero tolerance for error. Your business gets the same standard — no shortcuts, no excuses.",
+    stat: '500+',
+    statLabel: 'high-pressure decisions',
   },
   {
-    emoji: '📱',
-    title: 'Full Stack',
-    desc: 'Websites, mobile apps, admin dashboards, payment systems. One developer, complete solution. No agency markup.',
-    stat: '4',
-    statLabel: 'apps shipped',
+    emoji: '⚡',
+    title: 'We Ship Fast',
+    desc: 'Launched an e-commerce platform in under 10 hours. Landing pages in 1-2 weeks. Full apps in 4-6 weeks. Speed without sacrificing quality.',
+    stat: '<10hrs',
+    statLabel: 'fastest launch',
   },
   {
     emoji: '🎯',
     title: 'I Am My Customer',
-    desc: "I run a gym app, a tattoo booking site, a therapy landing page. I build for small businesses because I understand the hustle.",
-    stat: '100%',
-    statLabel: 'real-world tested',
+    desc: "I run a gym app, a tattoo booking site, a therapy platform, an e-commerce store. I build for small businesses because I am one.",
+    stat: '5',
+    statLabel: 'live projects',
   },
-  /* {
-    emoji: '🔒',
-    title: 'You Own Everything',
-    desc: "No monthly fees. No vendor lock-in. Your code, your domain, your data. Pay once, own forever.",
+  {
+    emoji: '🤝',
+    title: 'Your Business, Your Code',
+    desc: "No monthly fees. No vendor lock-in. You own everything — code, domain, data. I build it, hand it over, and support you after.",
     stat: '$0/mo',
     statLabel: 'after launch',
-  }, */
+  },
 ]
 
 const WhyMe = () => (
