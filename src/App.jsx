@@ -42,7 +42,7 @@ const Nav = () => {
 
 /* ─── HERO ─── */
 const Hero = () => (
-  <section className="relative min-h-[110vh] md:min-h-screen flex items-end pb-10 overflow-hidden">
+  <section className="relative min-h-[130vh] md:min-h-screen flex items-end pb-10 overflow-hidden">
     {/* BG */}
     <div className="absolute inset-0">
       <img
@@ -51,7 +51,7 @@ const Hero = () => (
         className="w-full h-full object-cover object-top"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/40 via-transparent to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[42%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
     </div>
 
     <div className="container mx-auto px-6 z-10 max-w-5xl flex items-end min-h-[80vh] pb-12">
@@ -61,12 +61,12 @@ const Hero = () => (
           <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">Software Developer · SG/MY</span>
         </div>
 
-        <h1 className="font-display text-6xl sm:text-7xl md:text-9xl leading-[0.9] tracking-wide mb-6">
+        <h1 className="font-display text-5xl sm:text-7xl md:text-9xl leading-[0.9] tracking-wide mb-4">
           <span className="text-white">PRECISION</span><br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-yellow-500 to-brand-gold">IN CHAOS.</span>
         </h1>
 
-        <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
+        <p className="text-gray-400 text-base md:text-xl leading-relaxed mb-6 max-w-lg">
           I build <span className="text-white font-medium">booking systems, management platforms, and websites</span> for small businesses in SG & MY. From <span className="text-white font-medium">gym apps</span> to <span className="text-white font-medium">tattoo booking sites</span> — if it helps you run your business, I'll build it.
         </p>
 
