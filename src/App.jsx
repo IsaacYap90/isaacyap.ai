@@ -9,7 +9,7 @@ const Nav = () => {
         <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) }} className="flex items-center gap-3 group">
           <img src="/images/logo-cropped.jpg" alt="Logo" className="w-11 h-11 rounded-full ring-2 ring-brand-gold/60 object-contain bg-black p-0.5" />
           <div className="leading-tight">
-            <span className="font-logo text-white text-2xl md:text-3xl tracking-wide block group-hover:text-brand-gold transition-colors">ISAAC YAP</span>
+            <span className="font-logo text-white text-3xl md:text-4xl tracking-wide block group-hover:text-brand-gold transition-colors font-bold">ISAAC YAP</span>
             <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Software Developer</span>
           </div>
         </a>
