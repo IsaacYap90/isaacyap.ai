@@ -54,7 +54,7 @@ const Hero = () => (
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
     </div>
 
-    <div className="container mx-auto px-6 z-10 max-w-5xl">
+    <div className="container mx-auto px-6 z-10 max-w-5xl flex items-end min-h-[80vh] pb-12">
       <div className="max-w-2xl">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-gold/10 border border-brand-gold/30 rounded-full mb-6">
           <span className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-pulse" />
@@ -94,7 +94,7 @@ const Hero = () => (
 /* ─── STATS ─── */
 const stats = [
   { value: '3', label: 'Businesses Served', color: 'text-white' },
-  { value: '<10hrs', label: 'Fastest Launch', color: 'text-brand-gold' },
+  { value: '5', label: 'Projects Live', color: 'text-brand-gold' },
   { value: '4', label: 'Apps Built', color: 'text-white' },
   { value: '1-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
 ]
@@ -151,7 +151,7 @@ const About = () => (
             The cage taught me that <span className="text-white font-semibold">nothing is impossible to overcome</span>. I push beyond physical and digital limits. First apprentice of <span className="text-white font-semibold">Melvin Yeoh</span> — the Godfather of Malaysian MMA. Featured on TV, radio, and in the blockbuster film WIRA (2019).
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            Now I channel that discipline into building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>. Self-taught developer. Launched an e-commerce platform in <span className="text-brand-gold font-semibold">under 10 hours</span>. If I can officiate a title fight with millions watching, I can ship your app on time.
+            Now I channel that discipline into building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>. Self-taught developer with <span className="text-brand-gold font-semibold">5 live projects</span> serving real businesses. If I can officiate a title fight with millions watching, I can ship your app on time.
           </p>
 
           {/* Credentials grid */}
@@ -310,9 +310,9 @@ const whyMeCards = [
   {
     emoji: '⚡',
     title: 'We Ship Fast',
-    desc: 'Launched an e-commerce platform in under 10 hours. Landing pages in 1-2 weeks. Full apps in 4-6 weeks. Speed without sacrificing quality.',
-    stat: '<10hrs',
-    statLabel: 'fastest launch',
+    desc: 'Landing pages in 1-2 weeks. Full apps in 4-6 weeks. Consistent delivery, no missed deadlines. Speed without sacrificing quality.',
+    stat: '1-6 wk',
+    statLabel: 'delivery time',
   },
   {
     emoji: '🎯',
