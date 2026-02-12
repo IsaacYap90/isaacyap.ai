@@ -50,8 +50,8 @@ const Hero = () => (
         alt="Isaac Yap"
         className="w-full h-full object-cover object-top"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/70 via-[#0a0a0a]/30 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/40 via-transparent to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
     </div>
 
     <div className="container mx-auto px-6 z-10 max-w-5xl flex items-end min-h-[80vh] pb-12">
