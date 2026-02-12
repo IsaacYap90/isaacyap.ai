@@ -137,7 +137,7 @@ const About = () => (
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8">
               <p className="font-display text-2xl text-white tracking-wide">ISAAC YAP</p>
-              <p className="text-brand-gold text-xs font-semibold uppercase tracking-[0.2em] mt-1">MMA Referee · Developer · Coach</p>
+              <p className="text-brand-gold text-xs font-semibold uppercase tracking-[0.2em] mt-1">Software Developer · MMA Referee · Coach</p>
             </div>
           </div>
         </div>
@@ -145,13 +145,13 @@ const About = () => (
         {/* Text */}
         <div>
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            First apprentice of <span className="text-white font-semibold">Melvin Yeoh</span> — the Godfather of Malaysian MMA. Training under him since 2003. Chief Official at <span className="text-white font-semibold">Ultimate Beatdown</span> since 2011 — the premier fight league where fighters get signed to <span className="text-brand-gold font-semibold">ONE Championship</span>.
+            As a professional MMA referee and Muay Thai coach with <span className="text-white font-semibold">500+ bouts</span> across <span className="text-brand-gold font-semibold">ONE Championship</span>, Rebel FC, and Ultimate Beatdown, I've built my career on <span className="text-white font-semibold">precision under pressure, split-second decision-making, and zero tolerance for error</span> — the same principles I bring to every line of code.
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            <span className="text-white font-semibold">500+ bouts. Zero controversial decisions.</span> Featured on Malaysia TV Channel 8, BFM 89.9 radio, and Philippines national press. I've raised the hands of fighters who went on to become ONE Championship professionals.
+            The cage taught me that <span className="text-white font-semibold">nothing is impossible to overcome</span>. I push beyond physical and digital limits. First apprentice of <span className="text-white font-semibold">Melvin Yeoh</span> — the Godfather of Malaysian MMA. Featured on TV, radio, and in the blockbuster film WIRA (2019).
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            That career gave me a <span className="text-brand-gold font-semibold">zero-error mindset</span> under extreme pressure. Now I bring that same precision to building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>.
+            Now I channel that discipline into building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>. Self-taught developer. Launched an e-commerce platform in <span className="text-brand-gold font-semibold">under 10 hours</span>. If I can officiate a title fight with millions watching, I can ship your app on time.
           </p>
 
           {/* Credentials grid */}
