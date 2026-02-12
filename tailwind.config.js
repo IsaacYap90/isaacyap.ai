@@ -16,6 +16,7 @@ export default {
         sans: ['Space Grotesk', 'sans-serif'],
         display: ['Bebas Neue', 'sans-serif'],
         logo: ['Archivo Black', 'sans-serif'],
+        heading: ['Playfair Display', 'serif'],
       },
     },
   },
