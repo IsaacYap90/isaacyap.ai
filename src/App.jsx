@@ -94,7 +94,7 @@ const Hero = () => (
 /* ─── STATS ─── */
 const stats = [
   { value: '3', label: 'Businesses Served', color: 'text-white' },
-  { value: '500+', label: 'MMA Bouts Officiated', color: 'text-brand-gold' },
+  { value: '<10hrs', label: 'Fastest Launch', color: 'text-brand-gold' },
   { value: '4', label: 'Apps Built', color: 'text-white' },
   { value: '1-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
 ]
@@ -255,8 +255,16 @@ const portfolioProjects = [
   {
     emoji: '💆',
     title: 'Fab The Stretch Lad',
-    desc: 'High-conversion landing page for a stretch therapist. WhatsApp booking integration, service showcase, consultation flow.',
-    tech: ['Vite', 'Tailwind', 'WhatsApp API'],
+    desc: 'High-conversion landing page for a stretch therapist. Online booking system, Telegram notifications, service showcase.',
+    tech: ['Vite', 'Tailwind', 'Supabase'],
+    status: 'Live',
+    statusColor: 'text-green-400',
+  },
+  {
+    emoji: '🎨',
+    title: 'Pocolane',
+    desc: 'E-commerce platform for acrylic keychains & stickers. AI chatbot, PayNow QR checkout, product catalog, admin panel. Self-learned and launched in under 10 hours.',
+    tech: ['React', 'Firebase', 'Gemini AI'],
     status: 'Live',
     statusColor: 'text-green-400',
   },
