@@ -96,7 +96,7 @@ const stats = [
   { value: '3', label: 'Businesses Served', color: 'text-white' },
   { value: '5', label: 'Projects Live', color: 'text-brand-gold' },
   { value: '4', label: 'Apps Built', color: 'text-white' },
-  { value: '1-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
+  { value: '4-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
 ]
 
 const Stats = () => (
@@ -322,8 +322,8 @@ const whyMeCards = [
   {
     emoji: '⚡',
     title: 'We Ship Fast',
-    desc: 'Landing pages in 1-2 weeks. Full apps in 4-6 weeks. Consistent delivery, no missed deadlines. Speed without sacrificing quality.',
-    stat: '1-6 wk',
+    desc: 'Most projects delivered in 4-6 weeks. Consistent delivery, no missed deadlines. Speed without sacrificing quality.',
+    stat: '4-6 wk',
     statLabel: 'delivery time',
   },
   {
