@@ -156,10 +156,10 @@ const About = () => (
             {[
               { icon: '💻', title: 'Full Stack Dev', desc: 'React Native · Next.js · Supabase' },
               { icon: '🥊', title: '500+ Bouts', desc: 'Chief Official, Ultimate Beatdown' },
-              { icon: '🥋', title: 'Muay Thai Coach', desc: 'Evolve MMA, Singapore' },
+              { icon: '🥋', title: 'Muay Thai Coach', desc: 'Jai Muay Thai, Singapore' },
               { icon: '🌏', title: 'SG / MY Based', desc: 'English & Mandarin 中文' },
             ].map((item, i) => (
-              <div key={i} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:border-brand-gold/30 transition-colors">
+              <div key={i} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 pointer-events-none">
                 <span className="text-2xl mb-2 block">{item.icon}</span>
                 <h4 className="text-white font-bold text-sm mb-1">{item.title}</h4>
                 <p className="text-gray-500 text-xs">{item.desc}</p>
