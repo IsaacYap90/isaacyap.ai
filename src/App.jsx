@@ -145,10 +145,13 @@ const About = () => (
         {/* Text */}
         <div>
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            As a professional MMA referee and Muay Thai coach with <span className="text-white font-semibold">500+ bouts</span> across <span className="text-brand-gold font-semibold">ONE Championship</span>, Rebel FC, and Ultimate Beatdown, I've built my career on <span className="text-white font-semibold">precision under pressure, split-second decision-making, and zero tolerance for error</span> — the same principles I bring to every line of code.
+            I build websites and apps for small businesses — the kind of tools that actually help you <span className="text-white font-semibold">get more customers and save time</span>. Booking systems, online stores, landing pages, management platforms. If it runs your business better, I'll build it.
           </p>
-          <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            Now I channel that discipline into building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>. Self-taught developer serving real businesses. From booking sites to e-commerce — <span className="text-brand-gold font-semibold">anything you need a website for, I got your back</span>.
+          <p className="text-gray-400 text-lg leading-relaxed mb-6">
+            I understand service businesses because <span className="text-white font-semibold">I am one</span>. I've run my own businesses in Singapore and Malaysia, so I know what it's like to juggle everything. <span className="text-brand-gold font-semibold">Anything you need a website for, I got your back</span>.
+          </p>
+          <p className="text-gray-400 text-sm leading-relaxed mb-10 italic">
+            Also a professional MMA referee with 500+ bouts across ONE Championship and Rebel FC — because discipline and precision aren't just buzzwords to me.
           </p>
 
           {/* Credentials grid */}
