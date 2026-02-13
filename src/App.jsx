@@ -336,7 +336,7 @@ const whyMeCards = [
   {
     emoji: '🤝',
     title: 'Your Business, Your Code',
-    desc: "No monthly fees. No vendor lock-in. You own everything — code, domain, data. I build it, hand it over, and support you after.",
+    desc: "No monthly fees. No vendor lock-in. Absolutely no hidden fees. You own everything — code, domain, data. I build it, hand it over, and support you after.",
     stat: '$0/mo',
     statLabel: 'after launch',
   },
@@ -512,7 +512,7 @@ const Contact = () => {
             <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-3">Let's Build Something.</h2>
             <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mb-6" />
             <p className="text-gray-400 text-base leading-relaxed mb-8">
-              Need an app for your business? A booking system? A management platform? Let's talk about what you need.
+              Need an app for your business? A booking system? A management platform? Not sure what you need? Let's figure it out together.
             </p>
 
             <div className="flex flex-col gap-4 mb-8">
