@@ -235,6 +235,7 @@ const portfolioProjects = [
     tech: ['React Native', 'Expo', 'Supabase'],
     status: 'In Development',
     statusColor: 'text-yellow-400',
+    url: null,
   },
   {
     emoji: '🏆',
@@ -243,6 +244,7 @@ const portfolioProjects = [
     tech: ['React', 'Supabase Realtime', 'Tailwind'],
     status: 'In Development',
     statusColor: 'text-brand-gold',
+    url: 'https://ub-live-scoring.vercel.app',
   },
   {
     emoji: '🎨',
@@ -251,6 +253,7 @@ const portfolioProjects = [
     tech: ['Next.js', 'Tailwind', 'Supabase'],
     status: 'Just Shipped',
     statusColor: 'text-brand-gold',
+    url: 'https://tattbylyds.vercel.app',
   },
   {
     emoji: '💆',
@@ -259,6 +262,7 @@ const portfolioProjects = [
     tech: ['Vite', 'Tailwind', 'Supabase'],
     status: 'Live',
     statusColor: 'text-green-400',
+    url: 'https://fabthestretchlad.vercel.app',
   },
   {
     emoji: '🎨',
@@ -267,6 +271,7 @@ const portfolioProjects = [
     tech: ['React', 'Firebase', 'Gemini AI'],
     status: 'Live',
     statusColor: 'text-green-400',
+    url: 'https://pocolane.com',
   },
 ]
 
@@ -280,19 +285,26 @@ const Portfolio = () => (
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-        {portfolioProjects.map((p, i) => (
-          <div key={i} className="group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04]">
-            <div className="text-3xl mb-4">{p.emoji}</div>
-            <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
-            <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.desc}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {p.tech.map((t, j) => (
-                <span key={j} className="bg-white/5 px-2 py-0.5 rounded text-xs text-gray-500">{t}</span>
-              ))}
-            </div>
-            <span className={`${p.statusColor} text-xs font-bold uppercase tracking-widest`}>{p.status}</span>
-          </div>
-        ))}
+        {portfolioProjects.map((p, i) => {
+          const Wrapper = p.url ? 'a' : 'div';
+          const linkProps = p.url ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+          return (
+            <Wrapper key={i} {...linkProps} className={`group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04] block ${p.url ? 'cursor-pointer' : ''}`}>
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-3xl">{p.emoji}</div>
+                {p.url && <span className="text-gray-600 group-hover:text-brand-gold text-sm transition-colors">↗</span>}
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.desc}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {p.tech.map((t, j) => (
+                  <span key={j} className="bg-white/5 px-2 py-0.5 rounded text-xs text-gray-500">{t}</span>
+                ))}
+              </div>
+              <span className={`${p.statusColor} text-xs font-bold uppercase tracking-widest`}>{p.status}</span>
+            </Wrapper>
+          );
+        })}
       </div>
     </div>
   </section>
