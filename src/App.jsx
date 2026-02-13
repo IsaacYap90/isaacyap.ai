@@ -271,7 +271,7 @@ const portfolioProjects = [
     tech: ['React', 'Firebase', 'Gemini AI'],
     status: 'Live',
     statusColor: 'text-green-400',
-    url: 'https://pocolane.com',
+    url: 'https://pocolane.studio',
   },
 ]
 
