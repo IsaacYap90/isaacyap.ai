@@ -151,7 +151,7 @@ const About = () => (
             The cage taught me that <span className="text-white font-semibold">nothing is impossible to overcome</span>. I push beyond physical and digital limits. First apprentice of <span className="text-white font-semibold">Melvin Yeoh</span> — the Godfather of Malaysian MMA. Featured on TV, radio, and in the blockbuster film WIRA (2019).
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            Now I channel that discipline into building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>. Self-taught developer with <span className="text-brand-gold font-semibold">multiple live projects</span> serving real businesses. If I can officiate a title fight with millions watching, I can ship your app on time.
+            Now I channel that discipline into building software. I understand service businesses because <span className="text-white font-semibold">I am one</span>. Self-taught developer serving real businesses. From booking sites to e-commerce — <span className="text-brand-gold font-semibold">anything you need a website for, I got your back</span>. If I can officiate a title fight with millions watching, I can ship your app on time.
           </p>
 
           {/* Credentials grid */}
