@@ -329,7 +329,7 @@ const whyMeCards = [
   {
     emoji: '🎯',
     title: 'I Am My Customer',
-    desc: "I run a gym app, a tattoo booking site, a therapy platform, an e-commerce store. I build for small businesses because I am one.",
+    desc: "From gym websites to e-commerce stores — I do it all. I build for small businesses because I am one.",
     stat: '5',
     statLabel: 'live projects',
   },
