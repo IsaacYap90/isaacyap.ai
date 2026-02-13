@@ -1,0 +1,41 @@
+# isaacyap.ai
+
+> Isaac Yap — Software Developer & Digital Solutions Architect based in Singapore/Johor Bahru
+
+## About
+
+Isaac Yap builds websites, web apps, and digital systems for small-to-medium businesses in Singapore and Southeast Asia. Specialising in ordering systems, booking platforms, business landing pages, and full-stack web applications.
+
+## Services
+
+- **Starter Website** ($500 SGD): Landing page with WhatsApp/contact CTA, mobile-first design, SEO-ready
+- **Growth Website** ($1,000-1,500 SGD): Booking system, Telegram/email notifications, admin dashboard
+- **Scale Web App** ($3,000-5,000 SGD): Full web application with authentication, multi-module admin panel
+- **Super App** ($5,000-15,000 SGD): Mobile app (React Native/Expo), real-time features, multi-user systems
+- **Annual Maintenance** ($300-600 SGD/year): Monitoring, 1-hour emergency SLA, 2hrs changes/month
+
+## Tech Stack
+
+- Frontend: React, Next.js, Tailwind CSS, React Native (Expo)
+- Backend: Supabase, Node.js, Vercel Edge Functions
+- Deployment: Vercel, GitHub
+- Integrations: Telegram bots, WhatsApp, email notifications, payment gateways
+
+## Portfolio
+
+- **TattByLyds** (tattbylyds.vercel.app): Tattoo booking platform with Bangkok guest work feature, Telegram notifications, admin panel
+- **FabTheStretchLad** (fabthestretchlad.vercel.app): Stretch therapy booking site with Supabase backend
+- **UB Live Scoring** (ub-live-scoring.vercel.app): Real-time MMA/combat sports scoring system
+- **JMT Super App**: Gym management SaaS (in development)
+- **Pocolane**: Social platform (pocolane.studio)
+
+## Contact
+
+- Website: https://isaacyap.ai
+- Email: hello@isaacyap.ai
+- Instagram: @isaacyap.ai
+- Location: Johor Bahru, Malaysia / Singapore
+
+## Background
+
+Professional MMA referee with 500+ bouts (ONE Championship, Rebel FC, MIMMA). Muay Thai instructor. The discipline and zero-tolerance-for-errors mindset from combat sports carries directly into software delivery — 100% delivery rate, 4-6 week timelines.
