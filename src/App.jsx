@@ -210,10 +210,10 @@ const About = () => (
             I build websites and apps for small businesses — the kind of tools that actually help you <span className="text-white font-semibold">get more customers and save time</span>. Booking systems, online stores, landing pages, management platforms. If it runs your business better, I'll build it.
           </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            I understand service businesses because <span className="text-white font-semibold">I am one</span>. I've run my own businesses in Singapore and Malaysia, so I know what it's like to juggle everything. <span className="text-brand-gold font-semibold">Anything you need a website for, I got your back</span>.
+            I understand service businesses because <span className="text-white font-semibold">I run one</span>. I've run my own businesses in Singapore and Malaysia, so I know what it's like to juggle everything. <span className="text-brand-gold font-semibold">Anything you need a website for, I've got your back</span>.
           </p>
           <p className="text-gray-400 text-sm leading-relaxed mb-10 italic">
-            Also a professional MMA referee with 500+ bouts across ONE Championship and Rebel FC — because discipline and precision aren't just buzzwords to me.
+            I'm also a professional MMA referee with 500+ bouts across ONE Championship and Rebel FC — because discipline and precision aren't just buzzwords to me.
           </p>
 
           <motion.div className="grid grid-cols-2 gap-4" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -356,7 +356,7 @@ const portfolioProjects = [
   {
     emoji: '🎨',
     title: 'Pocolane',
-    desc: 'E-commerce platform for acrylic keychains & stickers. AI chatbot, PayNow QR checkout, product catalog, admin panel. Self-learned and launched in under 10 hours.',
+    desc: 'E-commerce platform for acrylic keychains & stickers. AI chatbot, PayNow QR checkout, product catalog, admin panel. Self-taught and launched in under 10 hours.',
     tech: ['React', 'Firebase', 'Gemini AI'],
     status: 'Live',
     statusColor: 'text-green-400',
@@ -432,7 +432,7 @@ const whyMeCards = [
   {
     emoji: '🎯',
     title: 'I Am My Customer',
-    desc: "From gym websites to e-commerce stores — I do it all. I build for small businesses because I am one.",
+    desc: "From gym websites to e-commerce stores — I do it all. I build for small businesses because I run one.",
     stat: '5',
     statLabel: 'live projects',
   },
