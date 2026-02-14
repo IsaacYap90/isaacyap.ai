@@ -1,4 +1,42 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+
+/* ─── ANIMATION HELPERS ─── */
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
+const staggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+}
+
+/* ─── COUNT UP HOOK ─── */
+const useCountUp = (end, duration = 1.5, inView) => {
+  const [count, setCount] = useState(0)
+  useEffect(() => {
+    if (!inView) return
+    let start = 0
+    const increment = end / (duration * 60)
+    const timer = setInterval(() => {
+      start += increment
+      if (start >= end) {
+        setCount(end)
+        clearInterval(timer)
+      } else {
+        setCount(Math.floor(start))
+      }
+    }, 1000 / 60)
+    return () => clearInterval(timer)
+  }, [inView, end, duration])
+  return count
+}
 
 /* ─── NAV ─── */
 const Nav = () => {
@@ -13,21 +51,18 @@ const Nav = () => {
             <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Software Developer</span>
           </div>
         </a>
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 text-sm">
           <a href="#portfolio" className="text-gray-400 hover:text-brand-gold transition-colors">Portfolio</a>
           <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">About</a>
           <a href="#why-me" className="text-gray-400 hover:text-brand-gold transition-colors">Why Me</a>
           <a href="#contact" className="px-5 py-2 bg-brand-red hover:bg-red-700 text-white font-semibold rounded-lg transition-all text-xs uppercase tracking-wider">Contact</a>
         </div>
-        {/* Mobile hamburger */}
         <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
           <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
           <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
           <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#0a0a0a]/95 backdrop-blur-lg border-t border-white/5 px-6 py-6 flex flex-col gap-5">
           <a href="#portfolio" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">Portfolio</a>
@@ -43,34 +78,34 @@ const Nav = () => {
 /* ─── HERO ─── */
 const Hero = () => (
   <section className="relative min-h-[130vh] md:min-h-screen flex items-end pb-10 overflow-hidden">
-    {/* BG */}
     <div className="absolute inset-0">
-      <img
-        src="/images/hero-rebel-fc.jpg"
-        alt="Isaac Yap"
-        className="w-full h-full object-cover object-top"
-      />
+      <img src="/images/hero-rebel-fc.jpg" alt="Isaac Yap" className="w-full h-full object-cover object-top" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/40 via-transparent to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-[42%] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
     </div>
 
     <div className="container mx-auto px-6 z-10 max-w-5xl flex items-end min-h-[80vh] pb-12">
-      <div className="max-w-2xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-gold/10 border border-brand-gold/30 rounded-full mb-6">
+      <motion.div
+        className="max-w-2xl"
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+      >
+        <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-gold/10 border border-brand-gold/30 rounded-full mb-6">
           <span className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-pulse" />
           <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">Software Developer · SG/MY</span>
-        </div>
+        </motion.div>
 
-        <h1 className="font-display text-5xl sm:text-7xl md:text-9xl leading-[0.9] tracking-wide mb-4">
+        <motion.h1 variants={fadeIn} className="font-display text-5xl sm:text-7xl md:text-9xl leading-[0.9] tracking-wide mb-4">
           <span className="text-white">PRECISION</span><br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-yellow-500 to-brand-gold">IN CHAOS.</span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-gray-400 text-base md:text-xl leading-relaxed mb-6 max-w-lg">
+        <motion.p variants={fadeIn} className="text-gray-400 text-base md:text-xl leading-relaxed mb-6 max-w-lg">
           I build <span className="text-white font-medium">booking systems, management platforms, and websites</span> for small businesses in SG & MY. From <span className="text-white font-medium">gym apps</span> to <span className="text-white font-medium">tattoo booking sites</span> — if it helps you run your business, I'll build it.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-wrap gap-4">
+        <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
           <a href="#portfolio" className="group px-7 py-3.5 bg-brand-red hover:bg-red-600 text-white font-bold rounded-lg transition-all flex items-center gap-2">
             See My Work
             <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -78,11 +113,10 @@ const Hero = () => (
           <a href="#contact" className="px-7 py-3.5 border border-white/15 hover:border-brand-gold text-white hover:text-brand-gold font-semibold rounded-lg transition-all backdrop-blur-sm">
             Let's Talk
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
 
-    {/* Scroll indicator */}
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
       <div className="w-5 h-8 border-2 border-white/20 rounded-full flex justify-center pt-1.5">
         <div className="w-1 h-2 bg-brand-gold rounded-full animate-bounce" />
@@ -92,58 +126,86 @@ const Hero = () => (
 )
 
 /* ─── STATS ─── */
-const stats = [
-  { value: '3', label: 'Businesses Served', color: 'text-white' },
-  { value: '100%', label: 'Delivery Rate', color: 'text-brand-gold' },
-  { value: '4', label: 'Apps Built', color: 'text-white' },
-  { value: '4-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
+const statsData = [
+  { value: 3, display: (v) => `${v}`, label: 'Businesses Served', color: 'text-white' },
+  { value: 100, display: (v) => `${v}%`, label: 'Delivery Rate', color: 'text-brand-gold' },
+  { value: 4, display: (v) => `${v}`, label: 'Apps Built', color: 'text-white' },
+  { value: null, display: () => '4-6 Wks', label: 'Average Build Time', color: 'text-brand-red' },
 ]
 
-const Stats = () => (
-  <section className="relative py-16 bg-[#0a0a0a] border-y border-white/5">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.03)_0%,_transparent_70%)]" />
-    <div className="container mx-auto px-6 relative">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map((s, i) => (
-          <div key={i} className="text-center">
-            <h3 className={`font-display text-5xl md:text-6xl tracking-wide ${s.color} mb-1`}>{s.value}</h3>
-            <p className="text-gray-500 text-xs uppercase tracking-widest font-medium">{s.label}</p>
-          </div>
-        ))}
+const StatItem = ({ stat, inView }) => {
+  const count = useCountUp(stat.value || 0, 1.2, inView)
+  return (
+    <motion.div variants={fadeIn} className="text-center">
+      <h3 className={`font-display text-5xl md:text-6xl tracking-wide ${stat.color} mb-1`}>
+        {stat.value !== null ? stat.display(count) : stat.display()}
+      </h3>
+      <p className="text-gray-500 text-xs uppercase tracking-widest font-medium">{stat.label}</p>
+    </motion.div>
+  )
+}
+
+const Stats = () => {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-100px' })
+  return (
+    <section className="relative py-16 bg-[#0a0a0a] border-y border-white/5">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.03)_0%,_transparent_70%)]" />
+      <div className="container mx-auto px-6 relative" ref={ref}>
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={staggerContainer}
+        >
+          {statsData.map((s, i) => (
+            <StatItem key={i} stat={s} inView={inView} />
+          ))}
+        </motion.div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 /* ─── ABOUT ─── */
 const About = () => (
   <section id="about" className="py-24 bg-[#0a0a0a]">
     <div className="container mx-auto px-6 max-w-6xl">
-      {/* Section header */}
-      <div className="text-center mb-16">
+      <motion.div
+        className="text-center mb-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+      >
         <h2 className="font-display text-4xl md:text-6xl text-white tracking-wide mb-2">FROM THE CAGE TO THE CODE.</h2>
         <div className="w-16 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto" />
-      </div>
+      </motion.div>
 
       <div className="grid md:grid-cols-2 gap-16 items-center">
-        {/* Image */}
-        <div className="relative group">
+        <motion.div
+          className="relative group"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeInLeft}
+        >
           <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
           <div className="relative h-[520px] rounded-2xl overflow-hidden">
-            <img
-              src="/images/about-arms-spread.jpg"
-              alt="Isaac Yap"
-              className="w-full h-full object-cover object-top"
-            />
+            <img src="/images/about-arms-spread.jpg" alt="Isaac Yap" className="w-full h-full object-cover object-top" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8">
               <p className="font-display text-2xl text-white tracking-wide">ISAAC YAP</p>
               <p className="text-brand-gold text-xs font-semibold uppercase tracking-[0.2em] mt-1">Software Developer · MMA Referee · Coach</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Text */}
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeIn}
+        >
           <p className="text-gray-400 text-lg leading-relaxed mb-6">
             I build websites and apps for small businesses — the kind of tools that actually help you <span className="text-white font-semibold">get more customers and save time</span>. Booking systems, online stores, landing pages, management platforms. If it runs your business better, I'll build it.
           </p>
@@ -154,22 +216,21 @@ const About = () => (
             Also a professional MMA referee with 500+ bouts across ONE Championship and Rebel FC — because discipline and precision aren't just buzzwords to me.
           </p>
 
-          {/* Credentials grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <motion.div className="grid grid-cols-2 gap-4" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             {[
               { icon: '💻', title: 'Full Stack Dev', desc: 'React Native · Next.js · Supabase' },
               { icon: '🥊', title: '500+ Bouts', desc: 'Chief Official, Ultimate Beatdown' },
               { icon: '🥋', title: 'Muay Thai Coach', desc: 'Jai Muay Thai, Singapore' },
               { icon: '🌏', title: 'SG / MY Based', desc: 'English & Mandarin 中文' },
             ].map((item, i) => (
-              <div key={i} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 pointer-events-none">
+              <motion.div key={i} variants={fadeIn} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 pointer-events-none">
                 <span className="text-2xl mb-2 block">{item.icon}</span>
                 <h4 className="text-white font-bold text-sm mb-1">{item.title}</h4>
                 <p className="text-gray-500 text-xs">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   </section>
@@ -179,45 +240,73 @@ const About = () => (
 const AsSeenIn = () => (
   <section className="py-24 bg-[#060606]">
     <div className="container mx-auto px-6 max-w-4xl">
-      <div className="text-center mb-12">
+      <motion.div
+        className="text-center mb-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+      >
         <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">As Seen In.</h2>
         <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto mb-4" />
         <p className="text-gray-500 text-base">Featured as the MMA referee in the Malaysian blockbuster film <span className="text-white font-semibold">WIRA</span> (2019)</p>
-      </div>
+      </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-        <div className="relative group">
+      <motion.div
+        className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={staggerContainer}
+      >
+        <motion.div variants={fadeIn} className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
           <div className="relative rounded-2xl overflow-hidden">
-            <video
-              src="/images/wira-clip-2.mp4"
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full rounded-2xl aspect-video object-cover"
-            />
+            <video src="/images/wira-clip-2.mp4" controls playsInline preload="metadata" className="w-full rounded-2xl aspect-video object-cover" />
             <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 bg-black/70 border border-brand-gold/30 rounded-full backdrop-blur-sm pointer-events-none">
               <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🎬 WIRA (2019)</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="relative group">
+        <motion.div variants={fadeIn} className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
           <div className="relative rounded-2xl overflow-hidden">
-            <video
-              src="/images/wira-clip.mp4"
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full rounded-2xl aspect-video object-cover"
-            />
+            <video src="/images/wira-clip.mp4" controls playsInline preload="metadata" className="w-full rounded-2xl aspect-video object-cover" />
             <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 bg-black/70 border border-brand-gold/30 rounded-full backdrop-blur-sm pointer-events-none">
               <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🎬 WIRA (2019)</span>
             </div>
           </div>
+        </motion.div>
+      </motion.div>
+
+      {/* YouTube Embed — Rahul K Raju at Ultimate Beatdown */}
+      <motion.div
+        className="mt-10 max-w-2xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+      >
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-br from-brand-red to-brand-gold rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm" />
+          <div className="relative rounded-2xl overflow-hidden bg-black">
+            <div className="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/hsi17DnZcu0"
+                title="Refereeing Rahul K Raju at Ultimate Beatdown"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded-2xl"
+              />
+            </div>
+            <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 bg-black/70 border border-brand-gold/30 rounded-full backdrop-blur-sm pointer-events-none">
+              <span className="text-brand-gold text-xs font-semibold uppercase tracking-widest">🥊 Ultimate Beatdown</span>
+            </div>
+          </div>
         </div>
-      </div>
+        <p className="text-center text-gray-500 text-sm mt-4">Refereeing Rahul K Raju at Ultimate Beatdown</p>
+      </motion.div>
 
       <p className="text-center text-gray-600 text-sm mt-6">
         WIRA — a Malaysian action film featuring real combat sports professionals.
@@ -278,34 +367,48 @@ const portfolioProjects = [
 const Portfolio = () => (
   <section id="portfolio" className="py-24 bg-[#060606]">
     <div className="container mx-auto px-6 max-w-5xl">
-      <div className="text-center mb-12">
+      <motion.div
+        className="text-center mb-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+      >
         <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">What I Build.</h2>
         <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto mb-4" />
         <p className="text-gray-500 text-base max-w-lg mx-auto">Real apps for real businesses. Not templates — custom-built solutions.</p>
-      </div>
+      </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-5">
+      <motion.div
+        className="grid md:grid-cols-2 gap-5"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={staggerContainer}
+      >
         {portfolioProjects.map((p, i) => {
           const Wrapper = p.url ? 'a' : 'div';
           const linkProps = p.url ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' } : {};
           return (
-            <Wrapper key={i} {...linkProps} className={`group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04] block ${p.url ? 'cursor-pointer' : ''}`}>
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-3xl">{p.emoji}</div>
-                {p.url && <span className="text-gray-600 group-hover:text-brand-gold text-sm transition-colors">↗</span>}
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.desc}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {p.tech.map((t, j) => (
-                  <span key={j} className="bg-white/5 px-2 py-0.5 rounded text-xs text-gray-500">{t}</span>
-                ))}
-              </div>
-              <span className={`${p.statusColor} text-xs font-bold uppercase tracking-widest`}>{p.status}</span>
-            </Wrapper>
+            <motion.div key={i} variants={fadeIn}>
+              <Wrapper {...linkProps} className={`group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04] block ${p.url ? 'cursor-pointer' : ''}`}>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-3xl">{p.emoji}</div>
+                  {p.url && <span className="text-gray-600 group-hover:text-brand-gold text-sm transition-colors">↗</span>}
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">{p.desc}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {p.tech.map((t, j) => (
+                    <span key={j} className="bg-white/5 px-2 py-0.5 rounded text-xs text-gray-500">{t}</span>
+                  ))}
+                </div>
+                <span className={`${p.statusColor} text-xs font-bold uppercase tracking-widest`}>{p.status}</span>
+              </Wrapper>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   </section>
 )
@@ -345,14 +448,26 @@ const whyMeCards = [
 const WhyMe = () => (
   <section id="why-me" className="py-24 bg-[#0a0a0a]">
     <div className="container mx-auto px-6 max-w-5xl">
-      <div className="text-center mb-12">
+      <motion.div
+        className="text-center mb-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+      >
         <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-2">Why Work With Me.</h2>
         <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mx-auto" />
-      </div>
+      </motion.div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <motion.div
+        className="grid md:grid-cols-2 lg:grid-cols-4 gap-5"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={staggerContainer}
+      >
         {whyMeCards.map((c, i) => (
-          <div key={i} className="group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04]">
+          <motion.div key={i} variants={fadeIn} className="group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-7 transition-all duration-300 hover:bg-white/[0.04]">
             <div className="text-3xl mb-3">{c.emoji}</div>
             <div className="mb-3">
               <span className="font-display text-3xl text-brand-gold tracking-wide">{c.stat}</span>
@@ -360,9 +475,9 @@ const WhyMe = () => (
             </div>
             <h3 className="text-lg font-bold text-white mb-2">{c.title}</h3>
             <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   </section>
 )
@@ -377,9 +492,7 @@ const Pricing = () => (
         <p className="text-gray-500 text-base max-w-xl mx-auto">Other agencies charge you rent. I sell you the house. You own everything from day one.</p>
       </div>
 
-      {/* Pricing tiers */}
       <div className="grid md:grid-cols-3 gap-5 mb-16">
-        {/* Starter */}
         <div className="group bg-white/[0.02] border border-white/5 hover:border-brand-gold/40 rounded-xl p-8 transition-all duration-300">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded-full mb-4">
             <span className="text-green-400 text-xs font-semibold uppercase tracking-widest">Starter</span>
@@ -398,7 +511,6 @@ const Pricing = () => (
           </ul>
         </div>
 
-        {/* Growth */}
         <div className="group bg-white/[0.02] border border-brand-gold/30 rounded-xl p-8 transition-all duration-300 relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-gold text-black text-xs font-bold uppercase tracking-widest rounded-full">Most Popular</div>
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-gold/10 border border-brand-gold/30 rounded-full mb-4">
@@ -418,7 +530,6 @@ const Pricing = () => (
           </ul>
         </div>
 
-        {/* Scale */}
         <div className="group bg-white/[0.02] border border-white/5 hover:border-brand-red/40 rounded-xl p-8 transition-all duration-300">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-red/10 border border-brand-red/30 rounded-full mb-4">
             <span className="text-brand-red text-xs font-semibold uppercase tracking-widest">Scale</span>
@@ -438,7 +549,6 @@ const Pricing = () => (
         </div>
       </div>
 
-      {/* Maintenance plan */}
       <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 md:p-12">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -465,22 +575,18 @@ const Pricing = () => (
           </div>
         </div>
 
-        {/* Comparison */}
         <div className="mt-10 pt-10 border-t border-white/5">
           <p className="text-center text-gray-600 text-xs uppercase tracking-widest mb-6">3-Year Cost Comparison</p>
           <div className="grid grid-cols-3 gap-4 text-center max-w-lg mx-auto">
             <div />
             <div className="text-gray-500 text-xs uppercase tracking-widest">Subscription Agency</div>
             <div className="text-brand-gold text-xs uppercase tracking-widest">Isaac</div>
-
             <div className="text-gray-400 text-sm text-left">3-Year Total</div>
             <div className="text-gray-400 text-sm line-through">$1,800-10,800</div>
             <div className="text-white font-bold text-sm">$1,400-2,300</div>
-
             <div className="text-gray-400 text-sm text-left">Own Code?</div>
             <div className="text-brand-red text-sm">❌ Never</div>
             <div className="text-green-400 text-sm">✅ Day 1</div>
-
             <div className="text-gray-400 text-sm text-left">Site Down Fix</div>
             <div className="text-gray-500 text-sm">"We'll look into it"</div>
             <div className="text-brand-gold text-sm font-semibold">⚡ 1 Hour</div>
@@ -505,9 +611,14 @@ const Contact = () => {
   return (
     <section id="contact" className="relative py-24 bg-[#060606] border-t border-white/5">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(230,57,70,0.05)_0%,_transparent_60%)]" />
-      <div className="container mx-auto px-6 relative max-w-4xl">
+      <motion.div
+        className="container mx-auto px-6 relative max-w-4xl"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeIn}
+      >
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left — Info */}
           <div>
             <h2 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-3">Let's Build Something.</h2>
             <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-brand-gold rounded-full mb-6" />
@@ -537,7 +648,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right — Form */}
           <form onSubmit={handleSubmit} className="bg-white/[0.02] border border-white/5 rounded-xl p-7 space-y-5">
             <div>
               <label className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-2 block">Your Name</label>
@@ -573,7 +683,7 @@ const Contact = () => {
         <div className="pt-12 mt-12 border-t border-white/5 text-center">
           <p className="text-gray-700 text-xs">© 2026 isaacyap.ai. All rights reserved.</p>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
