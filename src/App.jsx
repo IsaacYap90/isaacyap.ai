@@ -54,8 +54,8 @@ const Nav = () => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) }} className="flex items-center gap-3 group">
           <div className="leading-tight">
-              <span className="font-black text-red-600 text-2xl md:text-3xl tracking-tight">isaacyap</span>
-              <span className="font-black text-white text-2xl md:text-3xl">.ai</span>
+              <span className="font-display font-black text-red-600 text-2xl md:text-3xl tracking-wider">ISAACYAP</span>
+              <span className="font-display font-black text-white text-2xl md:text-3xl tracking-wider">.AI</span>
             </div>
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm">
