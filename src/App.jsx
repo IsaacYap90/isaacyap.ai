@@ -102,7 +102,7 @@ const Hero = () => (
         </motion.h1>
 
         <motion.p variants={fadeIn} className="text-gray-400 text-base md:text-xl leading-relaxed mb-6 max-w-lg">
-          I build <span className="text-white font-medium">booking systems, management platforms, and websites</span> for small businesses in SG & MY. From <span className="text-white font-medium">gym apps</span> to <span className="text-white font-medium">tattoo booking sites</span> — if it helps you run your business, I'll build it.
+          I don't do templates. <span className="text-white font-medium">Talk to me and I'll listen to your needs</span> — then I'll <span className="text-white font-medium">customise every feature</span> to fit your business. Booking systems, management platforms, websites — <span className="text-white font-medium">built exactly how you need it</span>.
         </motion.p>
 
         <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
