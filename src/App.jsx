@@ -49,10 +49,6 @@ const Nav = () => {
               <span className="font-black text-red-600 text-2xl md:text-3xl tracking-tight">isaacyap</span>
               <span className="font-black text-white text-2xl md:text-3xl">.ai</span>
             </div>
-          <div className="leading-tight">
-            <span className="font-display text-white text-4xl md:text-5xl tracking-wider block group-hover:text-brand-gold transition-colors font-black">ISAAC YAP</span>
-            <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Software Developer</span>
-          </div>
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm">
           <a href="#portfolio" className="text-gray-400 hover:text-brand-gold transition-colors">Portfolio</a>
