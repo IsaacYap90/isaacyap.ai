@@ -45,7 +45,10 @@ const Nav = () => {
     <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) }} className="flex items-center gap-3 group">
-          <img src="/images/logo-circle.svg" alt="isaacyap.ai" className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover" />
+          <div className="leading-tight">
+              <span className="font-black text-red-600 text-2xl md:text-3xl tracking-tight">isaacyap</span>
+              <span className="font-black text-white text-2xl md:text-3xl">.ai</span>
+            </div>
           <div className="leading-tight">
             <span className="font-display text-white text-4xl md:text-5xl tracking-wider block group-hover:text-brand-gold transition-colors font-black">ISAAC YAP</span>
             <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Software Developer</span>
