@@ -45,7 +45,7 @@ const Nav = () => {
     <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) }} className="flex items-center gap-3 group">
-          <img src="/images/tiger-logo.jpg" alt="Logo" className="w-14 h-14 md:w-16 md:h-16 rounded-full ring-2 ring-brand-gold object-cover bg-black p-1" />
+          <img src="/images/logo-circle.svg" alt="isaacyap.ai" className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover" />
           <div className="leading-tight">
             <span className="font-display text-white text-4xl md:text-5xl tracking-wider block group-hover:text-brand-gold transition-colors font-black">ISAAC YAP</span>
             <span className="text-brand-gold text-[10px] font-semibold uppercase tracking-[0.15em]">Software Developer</span>
@@ -102,7 +102,7 @@ const Hero = () => (
         </motion.h1>
 
         <motion.p variants={fadeIn} className="text-gray-400 text-base md:text-xl leading-relaxed mb-6 max-w-lg">
-          I don't do templates. <span className="text-white font-medium">Talk to me and I'll listen to your needs</span> — then I'll <span className="text-white font-medium">customise every feature</span> to fit your business. Booking systems, management platforms, websites — <span className="text-white font-medium">built exactly how you need it</span>.
+          No templates. No cookie-cutters. I sit down with you, understand how your business runs, and <span className="text-white font-medium">customise every feature around your workflow</span>. Booking systems, management platforms, websites — <span className="text-white font-medium">precision-engineered for you</span>.
         </motion.p>
 
         <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
