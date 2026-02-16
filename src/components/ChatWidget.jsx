@@ -144,7 +144,7 @@ export default function ChatWidget() {
           <div style={{
             textAlign: 'center', padding: '6px 0 10px', fontSize: 11, color: '#555',
           }}>
-            Powered by IonicX AI
+            Powered by <a href="https://ionicx.ai" target="_blank" rel="noopener noreferrer" style={{ color: '#c8a24e', textDecoration: 'none' }}>IonicX AI</a>
           </div>
         </div>
       )}

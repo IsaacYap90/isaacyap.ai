@@ -556,6 +556,7 @@ const Contact = () => {
         <div className="pt-12 mt-12 border-t border-white/5 text-center">
           <p className="text-gray-700 text-xs">{t('contact.copyright')}</p>
           <p className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 bg-white/[0.03] border border-white/10 rounded-full text-gray-500 text-[10px] tracking-wide">{t('contact.poweredBy')}</p>
+          <a href="https://ionicx.ai" target="_blank" rel="noopener noreferrer" className="block mt-2 text-[10px] text-brand-gold/60 hover:text-brand-gold transition-colors tracking-wide">ionicx.ai →</a>
         </div>
       </motion.div>
     </section>
