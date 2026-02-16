@@ -690,6 +690,7 @@ const Contact = () => {
 
         <div className="pt-12 mt-12 border-t border-white/5 text-center">
           <p className="text-gray-700 text-xs">© 2026 isaacyap.ai. All rights reserved.</p>
+          <p className="inline-flex items-center gap-1.5 mt-3 px-3 py-1 bg-white/[0.03] border border-white/10 rounded-full text-gray-500 text-[10px] tracking-wide">🤖 AI-Powered by ChatGPT</p>
         </div>
       </motion.div>
     </section>
