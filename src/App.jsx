@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import ChatWidget from './components/ChatWidget'
 import { motion, useInView } from 'framer-motion'
 
 /* ─── ANIMATION HELPERS ─── */
@@ -708,6 +709,7 @@ function App() {
       <WhyMe />
       {/* <Pricing /> — hidden until Isaac is ready to charge */}
       <Contact />
+      <ChatWidget />
     </div>
   )
 }
