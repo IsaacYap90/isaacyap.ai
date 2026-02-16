@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "portfolio": "作品集",
+    "about": "关于",
+    "whyMe": "为什么选择我",
+    "contact": "联系方式"
+  },
+  "hero": {
+    "badge": "网站开发 · 新马",
+    "heading1": "精准",
+    "heading2": "驾驭混沌。",
+    "desc": "绝非套用模板。我会深入了解您的业务运作方式，<strong>围绕您的实际需求定制每一个功能</strong>。预约系统、管理平台、网站——<strong>为您的业务量身打造</strong>。",
+    "seeMyWork": "查看作品",
+    "letsTalk": "联系我"
+  },
+  "stats": {
+    "businessesServed": "服务企业",
+    "deliveryRate": "交付率",
+    "appsBuilt": "已开发应用",
+    "avgBuildTime": "平均开发周期"
+  },
+  "portfolio": {
+    "title": "我的作品。",
+    "subtitle": "为真实企业打造的真实应用。非模板——全定制解决方案。",
+    "projects": {
+      "jmt": {
+        "title": "JMT 超级应用",
+        "desc": "完整的健身房管理系统——课程预约、私教课程、会员门户、教练仪表盘、支付功能。"
+      },
+      "ub": {
+        "title": "UB 实时评分系统",
+        "desc": "实时MMA格斗评分系统。裁判在iPad上评分，主裁判实时查看仪表盘，即时出结果。告别纸质记分卡。"
+      },
+      "tatt": {
+        "title": "TattByLyds",
+        "desc": "纹身预约平台，含作品集展示、预约表单和PayNow押金支付。为艺术家品牌打造的暗色高端风格。"
+      },
+      "fab": {
+        "title": "Fab The Stretch Lad",
+        "desc": "拉伸理疗师的高转化着陆页。在线预约系统、Telegram通知、服务展示。"
+      },
+      "pocolane": {
+        "title": "Pocolane",
+        "desc": "亚克力钥匙扣和贴纸电商平台。AI聊天机器人、PayNow二维码支付、产品目录、管理后台。自学并在10小时内上线。"
+      }
+    },
+    "status": {
+      "inDevelopment": "开发中",
+      "justShipped": "刚上线",
+      "live": "已上线"
+    }
+  },
+  "about": {
+    "title": "从擂台到代码。",
+    "subtitle": "ISAAC YAP",
+    "role": "网站开发 · MMA裁判 · 泰拳教练",
+    "p1": "我为小型企业打造网站和应用——真正帮助您<strong>获取更多客户、节省时间</strong>的工具。预约系统、网上商店、着陆页、管理平台。只要能让您的业务运转更好，我就能做。",
+    "p2": "我理解服务型企业，因为<strong>我自己就经营着一家</strong>。我在新加坡和马来西亚都经营过自己的生意，深知同时处理多项事务的感受。<gold>您需要什么网站，我都能帮到您</gold>。",
+    "p3": "我同时也是一名职业MMA裁判，执法超过500场比赛，包括ONE Championship和Rebel FC——纪律和精准对我来说不只是口号。",
+    "cards": {
+      "fullstack": { "title": "全栈开发", "desc": "React Native · Next.js · Supabase" },
+      "bouts": { "title": "500+ 场比赛", "desc": "首席裁判，Ultimate Beatdown" },
+      "muaythai": { "title": "泰拳教练", "desc": "Jai Muay Thai，新加坡" },
+      "location": { "title": "新加坡/马来西亚", "desc": "英语 & 中文" }
+    }
+  },
+  "asSeenIn": {
+    "title": "媒体出演。",
+    "subtitle": "在马来西亚票房大片<strong>《WIRA》</strong>（2019）中担任MMA裁判",
+    "wiraLabel": "🎬 WIRA（2019）",
+    "ubLabel": "🥊 Ultimate Beatdown",
+    "ubCaption": "在Ultimate Beatdown执法Rahul K Raju的比赛",
+    "footer": "WIRA——一部由真正格斗运动专业人士出演的马来西亚动作电影。"
+  },
+  "whyMe": {
+    "title": "为什么选择我。",
+    "cards": {
+      "errors": {
+        "title": "零容错",
+        "desc": "每一行代码都经过测试，每一个页面都经过优化。您的业务值得精准——没有偷工减料，没有借口。",
+        "stat": "100%",
+        "statLabel": "交付率"
+      },
+      "fast": {
+        "title": "快速交付",
+        "desc": "大多数项目在4-6周内交付。稳定交付，绝不延期。速度与质量兼顾。",
+        "stat": "4-6 周",
+        "statLabel": "交付周期"
+      },
+      "customer": {
+        "title": "感同身受",
+        "desc": "从健身房网站到电商平台——我全都能做。我为小企业服务，因为我自己就是小企业主。",
+        "stat": "5",
+        "statLabel": "已上线项目"
+      },
+      "ownership": {
+        "title": "您的业务，您的代码",
+        "desc": "无月费。无供应商锁定。绝无隐藏费用。代码、域名、数据——一切都归您所有。我负责开发、交付，并在上线后持续为您提供支持。",
+        "stat": "$0/月",
+        "statLabel": "上线后费用"
+      }
+    }
+  },
+  "contact": {
+    "title": "一起打造。",
+    "desc": "需要一个业务应用？预约系统？管理平台？不确定需要什么？让我们一起来规划。",
+    "nameLabel": "您的姓名",
+    "namePlaceholder": "张三",
+    "messageLabel": "您的留言",
+    "messagePlaceholder": "我需要一个业务应用...",
+    "sendBtn": "💬 通过WhatsApp发送",
+    "copyright": "© 2026 isaacyap.ai. 版权所有。",
+    "poweredBy": "🤖 AI驱动 ChatGPT"
+  },
+  "chat": {
+    "greeting": "我是Bruce，Isaac的AI助手。需要网站或应用？告诉我您的业务需求。",
+    "placeholder": "输入消息...",
+    "send": "发送"
+  }
+}

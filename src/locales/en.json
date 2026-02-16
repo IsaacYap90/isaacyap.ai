@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "portfolio": "Portfolio",
+    "about": "About",
+    "whyMe": "Why Me",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Software Developer · SG/MY",
+    "heading1": "PRECISION",
+    "heading2": "IN CHAOS.",
+    "desc": "No copy-paste websites here. I sit down with you, understand how your business runs, and <strong>build every feature around what you actually need</strong>. Booking systems, management platforms, websites — <strong>made to fit your business like a glove</strong>.",
+    "seeMyWork": "See My Work",
+    "letsTalk": "Let's Talk"
+  },
+  "stats": {
+    "businessesServed": "Businesses Served",
+    "deliveryRate": "Delivery Rate",
+    "appsBuilt": "Apps Built",
+    "avgBuildTime": "Average Build Time"
+  },
+  "portfolio": {
+    "title": "What I Build.",
+    "subtitle": "Real apps for real businesses. Not templates — custom-built solutions.",
+    "projects": {
+      "jmt": {
+        "title": "JMT Super App",
+        "desc": "Complete gym management ecosystem — class booking, PT sessions, member portal, coach dashboard, payments."
+      },
+      "ub": {
+        "title": "UB Live Scoring",
+        "desc": "Real-time MMA fight scoring system. Judges score on iPads, chief official sees live dashboard, instant results. No more paper scorecards."
+      },
+      "tatt": {
+        "title": "TattByLyds",
+        "desc": "Tattoo booking platform with portfolio gallery, booking form, and PayNow deposit integration. Dark, premium aesthetic for an artist's brand."
+      },
+      "fab": {
+        "title": "Fab The Stretch Lad",
+        "desc": "High-conversion landing page for a stretch therapist. Online booking system, Telegram notifications, service showcase."
+      },
+      "pocolane": {
+        "title": "Pocolane",
+        "desc": "E-commerce platform for acrylic keychains & stickers. AI chatbot, PayNow QR checkout, product catalog, admin panel. Self-taught and launched in under 10 hours."
+      }
+    },
+    "status": {
+      "inDevelopment": "In Development",
+      "justShipped": "Just Shipped",
+      "live": "Live"
+    }
+  },
+  "about": {
+    "title": "FROM THE CAGE TO THE CODE.",
+    "subtitle": "ISAAC YAP",
+    "role": "Software Developer · MMA Referee · Coach",
+    "p1": "I build websites and apps for small businesses — the kind of tools that actually help you <strong>get more customers and save time</strong>. Booking systems, online stores, landing pages, management platforms. If it runs your business better, I'll build it.",
+    "p2": "I understand service businesses because <strong>I run one</strong>. I've run my own businesses in Singapore and Malaysia, so I know what it's like to juggle everything. <gold>Anything you need a website for, I've got your back</gold>.",
+    "p3": "I'm also a professional MMA referee with 500+ bouts across ONE Championship and Rebel FC — because discipline and precision aren't just buzzwords to me.",
+    "cards": {
+      "fullstack": { "title": "Full Stack Dev", "desc": "React Native · Next.js · Supabase" },
+      "bouts": { "title": "500+ Bouts", "desc": "Chief Official, Ultimate Beatdown" },
+      "muaythai": { "title": "Muay Thai Coach", "desc": "Jai Muay Thai, Singapore" },
+      "location": { "title": "SG / MY Based", "desc": "English & Mandarin 中文" }
+    }
+  },
+  "asSeenIn": {
+    "title": "As Seen In.",
+    "subtitle": "Featured as the MMA referee in the Malaysian blockbuster film <strong>WIRA</strong> (2019)",
+    "wiraLabel": "🎬 WIRA (2019)",
+    "ubLabel": "🥊 Ultimate Beatdown",
+    "ubCaption": "Refereeing Rahul K Raju at Ultimate Beatdown",
+    "footer": "WIRA — a Malaysian action film featuring real combat sports professionals."
+  },
+  "whyMe": {
+    "title": "Why Work With Me.",
+    "cards": {
+      "errors": {
+        "title": "Zero Tolerance for Errors",
+        "desc": "Every line of code tested. Every page optimised. Your business deserves precision — no shortcuts, no excuses.",
+        "stat": "100%",
+        "statLabel": "delivery rate"
+      },
+      "fast": {
+        "title": "We Ship Fast",
+        "desc": "Most projects delivered in 4-6 weeks. Consistent delivery, no missed deadlines. Speed without sacrificing quality.",
+        "stat": "4-6 wk",
+        "statLabel": "delivery time"
+      },
+      "customer": {
+        "title": "I Am My Customer",
+        "desc": "From gym websites to e-commerce stores — I do it all. I build for small businesses because I run one.",
+        "stat": "5",
+        "statLabel": "live projects"
+      },
+      "ownership": {
+        "title": "Your Business, Your Code",
+        "desc": "No monthly fees. No vendor lock-in. Absolutely no hidden fees. You own everything — code, domain, data. I build it, hand it over, and support you after.",
+        "stat": "$0/mo",
+        "statLabel": "after launch"
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Build Something.",
+    "desc": "Need an app for your business? A booking system? A management platform? Not sure what you need? Let's figure it out together.",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "John Doe",
+    "messageLabel": "Your Message",
+    "messagePlaceholder": "I need an app for my business...",
+    "sendBtn": "💬 Send via WhatsApp",
+    "copyright": "© 2026 isaacyap.ai. All rights reserved.",
+    "poweredBy": "🤖 AI-Powered by ChatGPT"
+  },
+  "chat": {
+    "greeting": "I'm Bruce, Isaac's AI assistant. Looking for a website or app? Tell me about your business.",
+    "placeholder": "Type a message...",
+    "send": "Send"
+  }
+}
