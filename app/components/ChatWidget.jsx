@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect, useRef } from 'react'
 import { useLang } from '../LanguageContext'
 
@@ -6,18 +7,19 @@ const STORAGE_KEY = 'bruce-chat-messages'
 export default function ChatWidget() {
   const { t, lang } = useLang()
   const [open, setOpen] = useState(false)
-  const [messages, setMessages] = useState(() => {
-    try {
-      const saved = sessionStorage.getItem(STORAGE_KEY)
-      return saved ? JSON.parse(saved) : null
-    } catch {
-      return null
-    }
-  })
+  const [messages, setMessages] = useState(null)
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const scrollRef = useRef(null)
   const prevLangRef = useRef(lang)
+
+  // Hydrate from sessionStorage on mount
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem(STORAGE_KEY)
+      if (saved) setMessages(JSON.parse(saved))
+    } catch {}
+  }, [])
 
   // Initialize messages with correct greeting, and reset on language change
   useEffect(() => {

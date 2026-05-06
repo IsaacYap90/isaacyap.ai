@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useCallback } from 'react'
+'use client'
+import { createContext, useContext, useState, useCallback, useEffect } from 'react'
 import en from './locales/en.json'
 import zh from './locales/zh.json'
 
@@ -6,12 +7,17 @@ const locales = { en, zh }
 const LanguageContext = createContext()
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'en')
+  const [lang, setLang] = useState('en')
+
+  useEffect(() => {
+    const saved = typeof window !== 'undefined' ? localStorage.getItem('lang') : null
+    if (saved && saved !== lang) setLang(saved)
+  }, [])
 
   const toggleLang = useCallback(() => {
     setLang(prev => {
       const next = prev === 'en' ? 'zh' : 'en'
-      localStorage.setItem('lang', next)
+      if (typeof window !== 'undefined') localStorage.setItem('lang', next)
       return next
     })
   }, [])

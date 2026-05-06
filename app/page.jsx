@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect, useRef } from 'react'
 import ChatWidget from './components/ChatWidget'
 import { motion, useInView } from 'framer-motion'
@@ -5,7 +6,6 @@ import { useLang } from './LanguageContext'
 
 /* ─── RICH TEXT HELPER ─── */
 const RichText = ({ text, className }) => {
-  // Supports <strong>, <gold> tags in locale strings
   const parts = text.split(/(<strong>.*?<\/strong>|<gold>.*?<\/gold>)/g)
   return (
     <p className={className}>
@@ -563,8 +563,8 @@ const Contact = () => {
   )
 }
 
-/* ─── APP ─── */
-function App() {
+/* ─── PAGE ─── */
+export default function Page() {
   return (
     <div className="bg-[#0a0a0a] min-h-screen text-white font-sans selection:bg-brand-red/80 selection:text-white">
       <Nav />
@@ -574,11 +574,8 @@ function App() {
       <About />
       <AsSeenIn />
       <WhyMe />
-      {/* <Pricing /> — hidden until Isaac is ready to charge */}
       <Contact />
       <ChatWidget />
     </div>
   )
 }
-
-export default App
