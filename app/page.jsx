@@ -1,6 +1,17 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import ChatWidget from './components/ChatWidget'
+const WhatsAppFAB = () => (
+  <a
+    href="https://wa.me/6580268821?text=Hi%20Isaac%2C%20I%20saw%20your%20site"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3.5 bg-green-500 hover:bg-green-400 text-white font-semibold rounded-full shadow-lg shadow-green-500/30 hover:shadow-green-400/40 transition-all"
+  >
+    <span className="text-xl leading-none">💬</span>
+    <span className="hidden sm:inline text-sm">Chat on WhatsApp</span>
+  </a>
+)
 import { motion, useInView } from 'framer-motion'
 import { useLang } from './LanguageContext'
 
@@ -580,7 +591,7 @@ export default function Page() {
       <AsSeenIn />
       <WhyMe />
       <Contact />
-      <ChatWidget />
+      <WhatsAppFAB />
     </div>
   )
 }
