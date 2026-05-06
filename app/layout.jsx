@@ -40,7 +40,16 @@ const jsonLd = {
   description: 'Web developer in Singapore specialising in AI-powered websites, mobile apps, and booking systems for small businesses.',
   address: { '@type': 'PostalAddress', addressLocality: 'Singapore', addressCountry: 'SG' },
   knowsAbout: ['Web Development', 'AI', 'Mobile Apps', 'React', 'Next.js', 'MMA Refereeing'],
-  sameAs: [],
+  sameAs: [
+    'https://www.linkedin.com/in/isaacyap90',
+    'https://www.facebook.com/IsaacProMMARef/',
+    'https://ionicx.ai',
+  ],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'IonicX AI',
+    url: 'https://ionicx.ai',
+  },
 }
 
 export default function RootLayout({ children }) {
