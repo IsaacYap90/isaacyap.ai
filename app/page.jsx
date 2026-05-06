@@ -480,6 +480,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const text = `Hi Isaac! I'm ${name}. ${message}`
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, message }),
+    }).catch(() => {})
     window.open(`https://wa.me/6580268821?text=${encodeURIComponent(text)}`, '_blank')
   }
 
