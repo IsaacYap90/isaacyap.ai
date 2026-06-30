@@ -1,5 +1,6 @@
 import './globals.css'
 import { LanguageProvider } from './LanguageContext'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 export const metadata = {
   metadataBase: new URL('https://isaacyap.ai'),
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <GoogleAnalytics />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
