@@ -3,13 +3,14 @@
     "portfolio": "作品集",
     "about": "关于",
     "whyMe": "为什么选择我",
+    "cv": "简历",
     "contact": "联系方式"
   },
   "hero": {
-    "badge": "网站开发 · 新马",
+    "badge": "AI 解决方案架构师 · Claude 合作伙伴网络",
     "heading1": "精准",
     "heading2": "驾驭混沌。",
-    "desc": "绝非套用模板。我会深入了解您的业务运作方式，<strong>围绕您的实际需求定制每一个功能</strong>。预约系统、管理平台、网站——<strong>为您的业务量身打造</strong>。",
+    "desc": "绝非套用模板。我基于 <strong>Claude API、MCP 与 Agent SDK 打造 AI 应用、智能体与网站</strong>——完全贴合您的业务实际运作。预约系统、管理平台、AI 助手，<strong>为您量身打造</strong>。",
     "seeMyWork": "查看作品",
     "letsTalk": "联系我"
   },
@@ -53,8 +54,8 @@
   "about": {
     "title": "从擂台到代码。",
     "subtitle": "ISAAC YAP",
-    "role": "网站开发 · MMA裁判 · 泰拳教练",
-    "p1": "我为小型企业打造网站和应用——真正帮助您<strong>获取更多客户、节省时间</strong>的工具。预约系统、网上商店、着陆页、管理平台。只要能让您的业务运转更好，我就能做。",
+    "role": "AI 解决方案架构师 · Claude 开发者 · MMA裁判",
+    "p1": "我为小型企业打造网站、应用与 <strong>AI 智能体</strong>——真正帮助您<strong>获取更多客户、节省时间</strong>的工具。预约系统、网上商店、AI 助手、管理平台。只要能让您的业务运转更好，我就能做。",
     "p2": "我理解服务型企业，因为<strong>我自己就经营着一家</strong>。我在新加坡和马来西亚都经营过自己的生意，深知同时处理多项事务的感受。<gold>您需要什么网站，我都能帮到您</gold>。",
     "p3": "我同时也是一名职业MMA裁判，执法超过500场比赛，包括ONE Championship和Rebel FC——纪律和精准对我来说不只是口号。",
     "cards": {
@@ -66,9 +67,9 @@
         "title": "500+ 场比赛",
         "desc": "首席裁判，Ultimate Beatdown"
       },
-      "muaythai": {
-        "title": "泰拳教练",
-        "desc": "Jai Muay Thai，新加坡"
+      "claude": {
+        "title": "Claude 合作伙伴网络",
+        "desc": "Anthropic 合作伙伴 · Claude API · MCP · Agent SDK"
       },
       "location": {
         "title": "新加坡/马来西亚",

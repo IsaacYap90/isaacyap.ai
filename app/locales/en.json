@@ -3,13 +3,14 @@
     "portfolio": "Portfolio",
     "about": "About",
     "whyMe": "Why Me",
+    "cv": "CV",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Software Developer · SG/MY",
+    "badge": "AI Solutions Architect · Claude Partner Network",
     "heading1": "PRECISION",
     "heading2": "IN CHAOS.",
-    "desc": "No copy-paste websites here. I sit down with you, understand how your business runs, and <strong>build every feature around what you actually need</strong>. Booking systems, management platforms, websites — <strong>made to fit your business like a glove</strong>.",
+    "desc": "No copy-paste here. I build <strong>AI-powered apps, agents, and websites on the Claude API, MCP and Agent SDK</strong> — custom to how your business actually runs. Booking systems, management platforms, AI assistants, <strong>made to fit like a glove</strong>.",
     "seeMyWork": "See My Work",
     "letsTalk": "Let's Talk"
   },
@@ -53,8 +54,8 @@
   "about": {
     "title": "FROM THE CAGE TO THE CODE.",
     "subtitle": "ISAAC YAP",
-    "role": "Software Developer · MMA Referee · Coach",
-    "p1": "I build websites and apps for small businesses — the kind of tools that actually help you <strong>get more customers and save time</strong>. Booking systems, online stores, landing pages, management platforms. If it runs your business better, I'll build it.",
+    "role": "AI Solutions Architect · Claude Developer · MMA Referee",
+    "p1": "I build websites, apps, and <strong>AI agents</strong> for small businesses — tools that actually help you <strong>get more customers and save time</strong>. Booking systems, online stores, AI assistants, management platforms. If it runs your business better, I'll build it.",
     "p2": "I understand service businesses because <strong>I run one</strong>. I've run my own businesses in Singapore and Malaysia, so I know what it's like to juggle everything. <gold>Anything you need a website for, I've got your back</gold>.",
     "p3": "I'm also a professional MMA referee with 500+ bouts across ONE Championship and Rebel FC — because discipline and precision aren't just buzzwords to me.",
     "cards": {
@@ -66,9 +67,9 @@
         "title": "500+ Bouts",
         "desc": "Chief Official, Ultimate Beatdown"
       },
-      "muaythai": {
-        "title": "Muay Thai Coach",
-        "desc": "Jai Muay Thai, Singapore"
+      "claude": {
+        "title": "Claude Partner Network",
+        "desc": "Anthropic Partner · Claude API · MCP · Agent SDK"
       },
       "location": {
         "title": "SG / MY Based",

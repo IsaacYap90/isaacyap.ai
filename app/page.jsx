@@ -107,6 +107,7 @@ const Nav = () => {
           <a href="#portfolio" className="text-gray-400 hover:text-brand-gold transition-colors">{t('nav.portfolio')}</a>
           <a href="#about" className="text-gray-400 hover:text-brand-gold transition-colors">{t('nav.about')}</a>
           <a href="#why-me" className="text-gray-400 hover:text-brand-gold transition-colors">{t('nav.whyMe')}</a>
+          <a href="/cv" className="text-gray-400 hover:text-brand-gold transition-colors">{t('nav.cv')}</a>
           <LangToggle />
           <a href="#contact" className="px-5 py-2 bg-brand-red hover:bg-red-700 text-white font-semibold rounded-lg transition-all text-xs uppercase tracking-wider">{t('nav.contact')}</a>
         </div>
@@ -121,6 +122,7 @@ const Nav = () => {
           <a href="#portfolio" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">{t('nav.portfolio')}</a>
           <a href="#about" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">{t('nav.about')}</a>
           <a href="#why-me" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">{t('nav.whyMe')}</a>
+          <a href="/cv" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-brand-gold text-lg font-medium transition-colors">{t('nav.cv')}</a>
           <div className="py-1"><LangToggle /></div>
           <a href="#contact" onClick={() => setMenuOpen(false)} className="px-5 py-3 bg-brand-red hover:bg-red-700 text-white font-bold rounded-lg text-center text-sm uppercase tracking-wider">{t('nav.contact')}</a>
         </div>
@@ -231,8 +233,8 @@ const About = () => {
   const { t } = useLang()
   const cards = [
     { icon: '💻', ...t('about.cards.fullstack') },
+    { icon: '🤖', ...t('about.cards.claude') },
     { icon: '🥊', ...t('about.cards.bouts') },
-    { icon: '🥋', ...t('about.cards.muaythai') },
     { icon: '🌏', ...t('about.cards.location') },
   ]
 
